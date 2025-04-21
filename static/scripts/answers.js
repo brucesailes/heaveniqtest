@@ -61,5 +61,5 @@ questionsAndAnswers.forEach((item, index) => {
 });
 
 document.getElementById("okButton").addEventListener("click", () => {
-  window.location.href = "mobile.html"; // or another page
+  window.location.href = "index.html"; // or another page
 });

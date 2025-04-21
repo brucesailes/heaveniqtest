@@ -434,7 +434,7 @@ function renderQuestion() {
   if (currentQuestionIndex === 0) {
     backButton.textContent = "Exit to Mobile"; // At start of test
     backButton.onclick = () => {
-      window.location.href = "/frontend/mobile.html";
+      window.location.href = "index.html";
     };
   } else {
     backButton.textContent = "Back"; // Mid-test navigation
