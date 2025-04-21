@@ -411,7 +411,7 @@ function updateServerScore(score) {
 // ----- Render the Score Page -----
 function renderScorePage() {
   const body = document.body;
-  body.style.background = "url('/pictures/closingpage.png') center center / cover no-repeat";
+  body.style.background = "url('/static/assets/closingpage.png') center center / cover no-repeat";
 
   const score = calculateScore();
   updateServerScore(score);
@@ -435,12 +435,12 @@ function renderScorePage() {
   container.appendChild(scoreBox);
 
   const bibleGraphic = document.createElement("img");
-  bibleGraphic.src = "/pictures/biblegraphic.png";
+  bibleGraphic.src = "/static/assets/biblegraphic.png";
   bibleGraphic.alt = "Bible Graphic";
   container.appendChild(bibleGraphic);
 
   const firstText = document.createElement("img");
-  firstText.src = "/pictures/firsttext.png";
+  firstText.src = "/static/assets/firsttext.png";
   firstText.alt = "First Text";
   container.appendChild(firstText);
 
@@ -448,17 +448,18 @@ function renderScorePage() {
   buttonGrid.className = "button-grid";
 
   const buttons = [
-    { src: "/pictures/answers.png", alt: "Answers", url: "answers.html" },
-    { src: "/pictures/buttonlearn.png", alt: "Learn", url: "video.html" },
-    { src: "/pictures/invite.png", alt: "Invite", url: "invite.html" },
-    { src: "/pictures/feedback.png", alt: "Feedback", url: "feedback.html" },
-    { src: "/pictures/sources.png", alt: "Sources", url: "sources.html" },
-    { src: "/pictures/aboutus.png", alt: "About Us", url: "aboutus.html" }
+    { src: "/static/assets/answers.png", alt: "Answers", url: "answers.html" },
+    { src: "/static/assets/buttonlearn.png", alt: "Learn", url: "video.html" },
+    { src: "/static/assets/invite.png", alt: "Invite", url: "invite.html" },
+    { src: "/static/assets/feedback.png", alt: "Feedback", url: "feedback.html" },
+    { src: "/static/assets/sources.png", alt: "Sources", url: "sources.html" },
+    { src: "/static/assets/aboutus.png", alt: "About Us", url: "aboutus.html" }
   ];
 
   buttons.forEach((button) => {
     const link = document.createElement("a");
     link.href = button.url;
+    link.target = "_blank";
     const buttonImage = document.createElement("img");
     buttonImage.src = button.src;
     buttonImage.alt = button.alt;
@@ -470,12 +471,12 @@ function renderScorePage() {
   container.appendChild(buttonGrid);
 
   const secondText = document.createElement("img");
-  secondText.src = "/pictures/secondtext.png";
+  secondText.src = "/static/assets/secondtext.png";
   secondText.alt = "Second Text";
   container.appendChild(secondText);
 
   const homeButton = document.createElement("img");
-  homeButton.src = "/pictures/homebutton.png";
+  homeButton.src = "/static/assets/homebutton.png";
   homeButton.alt = "Home Button";
   homeButton.className = "home-button";
   homeButton.onclick = () => {

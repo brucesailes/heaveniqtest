@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: url('/pictures/closingpage.png') center center / cover no-repeat;
+    background: url('/static/assets/closingpage.png') center center / cover no-repeat;
     font-family: Arial, sans-serif;
     text-align: center;
 }
@@ -12,7 +12,7 @@ body {
     background: rgba(255, 255, 255, 0.7); /* 70% opacity */
     margin: 5% auto;
     padding: 20px;
-    width: 80%;
+    width: 60%;
     max-width: 800px;
     border-radius: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -43,4 +43,54 @@ body {
     font-size: 28px;
     font-weight: bold;
     color: whitesmoke;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    /* Adjust white-box padding and width */
+    .white-box {
+        width: 90%; /* Increase width on smaller screens */
+        padding: 15px;
+    }
+
+    /* Adjust the score header size */
+    .score-header {
+        font-size: 24px; /* Smaller font for mobile */
+    }
+
+    /* Adjust score box size */
+    .score-box {
+        width: 150px; /* Reduce width on smaller screens */
+        padding: 10px;
+    }
+
+    /* Adjust score text font size */
+    .score-text {
+        font-size: 22px; /* Smaller font for mobile */
+    }
+}
+
+/* Extra small mobile screens */
+@media screen and (max-width: 480px) {
+    /* Adjust white-box padding and width */
+    .white-box {
+        width: 95%; /* Make it almost full width */
+        padding: 10px;
+    }
+
+    /* Further reduce the score header size */
+    .score-header {
+        font-size: 20px;
+    }
+
+    /* Further adjust score box size */
+    .score-box {
+        width: 120px;
+        padding: 8px;
+    }
+
+    /* Further reduce score text font size */
+    .score-text {
+        font-size: 18px;
+    }
 }

@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background: url('/pictures/invitebackground.png') no-repeat center center fixed;
+  background: url("/static/assets/invitebackground.png") no-repeat center center fixed;
   background-size: cover;
   color: #AD7E5E; 
   text-align: center;

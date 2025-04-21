@@ -5,7 +5,7 @@ body {
     padding: 0;
     text-align: center;
     color: #ffffff; /* Makes text white for contrast against the background */
-    background: url('/pictures/bg1.png') no-repeat center center fixed;
+    background: url('/static/assets/bg1.png') no-repeat center center fixed;
     background-size: cover;
     height: 100vh; /* Ensures the page fills the entire viewport */
 }
