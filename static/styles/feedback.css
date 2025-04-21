@@ -1,0 +1,123 @@
+/* General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: url('/pictures/feedbackground.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #AD7E5E;
+  text-align: center;
+}
+
+/* Feedback Container with White Box (70% opacity) */
+.feedback-container {
+  background: rgba(255, 255, 255, 0.7); /* 70% opaque white */
+  margin: 20px auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Image Styling */
+.feedback-header {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* Feedback Form Styling */
+.feedback-form {
+  width: 100%;
+}
+
+/* Form Group Styling */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.feedback-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+/* Input Fields Styling */
+.feedback-form input[type="text"], /* Added Name Input Styling */
+.feedback-form input[type="email"],
+.feedback-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* Light background for better readability */
+}
+
+.feedback-form input[type="text"]:focus, /* Focus Effect for Name Input */
+.feedback-form input[type="email"]:focus,
+.feedback-form textarea:focus {
+  border-color: #AD7E5E; /* Highlight border when focused */
+  outline: none;
+  background-color: #fff; /* Brighten the background */
+}
+
+/* Textarea Styling */
+.feedback-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Button Group Styling */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.send-btn,
+.cancel-btn {
+  flex: 1;
+  display: block;
+  background: none;       /* Removes any default background */
+  border: none;           /* Removes the default border */
+  padding: 0;             /* Removes default padding */
+  margin: 0;              /* Ensures no additional space */
+  outline: none;
+}
+
+.button-group img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.button-group img:hover {
+  transform: scale(1.05);
+}
+
+.button-group img:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Adjustments for Extra-Small Devices */
+@media (max-width: 320px) {
+  .feedback-form label {
+    font-size: 0.8rem;
+  }
+  .feedback-form input,
+  .feedback-form textarea {
+    font-size: 0.9rem;
+  }
+}

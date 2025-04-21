@@ -1,0 +1,21 @@
+fetch("modal.html")
+    .then(response => response.text())
+    .then(data => {
+        // Insert modal into the DOM
+        document.body.insertAdjacentHTML("beforeend", data);
+
+        // Add event listeners after injecting modal content
+        document.getElementById("startButton").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "flex";
+        });
+
+        document.getElementById("closeButton").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "none";
+        });
+
+        document.getElementById("okButton").addEventListener("click", function() {
+            window.open("questions.html", "_blank"); // Open in a new tab
+        });
+        
+    })
+    .catch(error => console.error("Error loading the modal:", error));

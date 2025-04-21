@@ -1,0 +1,77 @@
+/* Mobile-First General Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('/pictures/learnbackground.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #000;
+  }
+  
+  /* Header Styling */
+  .learn-header {
+    display: block;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    margin: 20px auto;
+  }
+  
+  /* Content Container: One-Column Stacking */
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px 0;
+    gap: 20px;
+  }
+  
+  /* Text Container */
+  .text-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .learn-text {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Video Container */
+  .video-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  video {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Back Button Container */
+  .back-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .back-button {
+    width: 80px;       /* Adjust to desired size */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  .back-button:hover {
+    transform: scale(1.05);
+  }
+  .back-button:active {
+    transform: scale(0.95);
+  }
+  

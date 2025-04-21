@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Invite a Friend</title>
+  <link rel="stylesheet" href="/styles/invite.css">
+</head>
+<body>
+  <div class="invite-container">
+    <!-- Header Image -->
+    <img src="/pictures/invitefriend.png" alt="Invite a Friend" class="invite-header">
+    
+    <!-- Invite Form -->
+    <form action="http://127.0.0.1:5000/invite" method="post" class="invite-form">
+      <!-- Friend's Email -->
+      <div class="form-group">
+        <label for="friend-email">Friend's Email:</label>
+        <input type="email" id="friend-email" name="friend_email" placeholder="Enter your friend's email" required>
+      </div>
+
+      <!-- Your Name (Optional) -->
+      <div class="form-group">
+        <label for="your-name">Your Name (Optional):</label>
+        <input type="text" id="your-name" name="your_name" placeholder="Your Name">
+      </div>
+
+      <!-- Comment Section (Optional) -->
+      <div class="form-group">
+        <label for="comment">Comment (Optional):</label>
+        <textarea id="comment" name="comment" placeholder="Add a comment..."></textarea>
+      </div>
+
+      <!-- Buttons -->
+      <div class="button-group">
+        <button type="submit" class="invite-btn">
+          <img src="/pictures/invitebutton.png" alt="Invite">
+        </button>
+        <a href="mobile.html" class="cancel-btn">
+          <img src="/pictures/cancelbutton.png" alt="Cancel">
+        </a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

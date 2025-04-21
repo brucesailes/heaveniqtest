@@ -1,0 +1,81 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: url('/pictures/answerbackground.png') no-repeat center center;
+  background-size: cover;
+  color: #333;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+/* Semi-transparent white box */
+#qa-container {
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 960px;
+  margin: 0 auto;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  overflow-x: hidden;
+}
+
+/* Question Style */
+.question {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 1.05rem;
+  color: #111;
+}
+
+/* Answer Style */
+.answer {
+  margin-top: 6px;
+  margin-bottom: 16px;
+  font-size: 0.98rem;
+  color: #222;
+}
+
+/* Emphasize the letter */
+.answer strong {
+  color: #e70c0c;
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+/* OK Button */
+#okButton {
+  display: block;
+  margin: 32px auto 0;
+  width: 160px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive image button */
+#okButton img {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  #qa-container {
+    padding: 16px;
+  }
+
+  .question {
+    font-size: 1rem;
+  }
+
+  .answer {
+    font-size: 0.95rem;
+  }
+}

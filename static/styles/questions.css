@@ -1,0 +1,144 @@
+/* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* Backup color if the background image isn't loaded */
+    color: #AD7E5E; 
+}
+
+/* Question Container */
+#question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    max-width: 100%;
+}
+
+/* Header Image Styling */
+.header-image {
+    width: 60%; /* Scale header image for mobile */
+    height: auto;
+    margin-bottom: 20px; /* Space between header and rectangle */
+}
+
+/* Rectangle Styling */
+.rectangle {
+    background-color: #ffffff; /* Solid white background */
+    width: 90%; /* Adjust rectangle width for mobile screens */
+    padding: 10px;
+    border-radius: 15px; /* Smooth, rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Stack contents vertically */
+    align-items: center; /* Center-align all elements inside */
+    margin-bottom: 2px;
+}
+
+/* Text Images (textq1.png and textquestion1.png) */
+.text-image, .question-image {
+    width: 80%; /* Keep images consistent within rectangle */
+    height: auto;
+    margin-bottom: 10px; /* Space between images */
+}
+
+/* Divider Image Styling */
+.divider-image {
+    width: 70%;
+    height: auto;
+    margin: 10px 0; /* Space above and below the divider */
+}
+
+/* Options Container */
+.options-container {
+    display: flex;
+    flex-direction: column; /* Stack options vertically */
+    gap: 10px; /* Space between each option */
+    width: 100%; /* Expand options to match the rectangle */
+}
+
+label {
+    font-size: 10px; /* Adjust size based on screen width */
+    cursor: pointer;
+    display: flex; /* Align the text with the radio button */
+    align-items: center; /* Vertical alignment */
+    gap: 8px; /* Space between the radio button and text */
+    line-height: 1.5; /* Improved readability on all devices */
+}
+
+
+/* Navigation Styling */
+/* Navigation Styling */
+.navigation {
+    display: flex;
+    justify-content: center; /* Center-align the Next button */
+    align-items: center;
+    width: 100%; /* Full width for proper alignment */
+    margin-top: 20px; /* Space above the button */
+}
+
+/* Next Button Styling */
+.nav-button {
+    width: 80px; /* Larger width for better visibility */
+    height: auto; /* Maintain aspect ratio */
+    padding: 10px 20px; /* Add inner spacing for a larger clickable area */
+    cursor: pointer; /* Interactive pointer */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth hover and focus effects */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add subtle depth */
+}
+
+.nav-button:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+#nextButton {
+    display: none; /* Initially hidden until selection is made */
+    background-size: contain; /* Ensure the image fits perfectly */
+}
+
+
+/* Custom Radio Button Styling for Consistency */
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;                      /* Fixed size */
+    height: 20px;
+    border: 2px solid #AD7E5E;         /* Outer circle color */
+    border-radius: 50%;               /* Circular shape */
+    outline: none;
+    cursor: pointer;
+    display: inline-flex;            /* Use inline-flex for consistent alignment */
+    align-items: center;              /* Center the inner circle vertically */
+    justify-content: center;          /* Center the inner circle horizontally */
+    box-sizing: border-box;           /* Ensure padding/border are included in the size */
+    flex-shrink: 0;                   /* Prevent shrinking regardless of label text */
+    margin: 0;                        /* Remove extra margins */
+  }
+  
+  input[type="radio"]::before {
+    content: '';                      /* Empty content for the inner circle */
+    width: 12px;                      /* Fixed inner circle size */
+    height: 12px;
+    background-color: #AD7E5E;         /* Fill color */
+    border-radius: 50%;
+    transform: scale(0);              /* Hidden by default */
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  input[type="radio"]:checked::before {
+    transform: scale(1);              /* Show inner circle when checked */
+  }
+  
+  /* Label Styling to Ensure Consistent Alignment */
+  label {
+    font-size: 1rem;                  /* Good size for mobile */
+    cursor: pointer;
+    display: flex;                    /* Use flex to align the radio and text */
+    align-items: center;              /* Vertically center align the radio and text */
+    gap: 8px;                         /* Space between radio button and label text */
+    line-height: 1.5;                 /* Improve readability */
+  }
+  

@@ -1,0 +1,83 @@
+/* Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Keep it fixed on the screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure the modal appears above other content */
+}
+
+/* Modal Content Styling */
+.modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width for content alignment */
+    padding: 0;
+}
+
+/* Rectangle Styling */
+.rectangle {
+    background-color: #ffffff; /* White rectangle background */
+    width: 300px; /* Adjust rectangle width for mobile screens */
+    height: auto; /* Auto height to fit content dynamically */
+    padding: 20px; /* Add padding inside the rectangle */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some depth */
+    display: flex; /* Flexbox to position content inside the rectangle */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center-align content */
+    position: relative; /* Relative to position the X button inside */
+}
+
+/* Close Icon Styling (X Button) */
+.close-icon {
+    position: absolute; /* Positioned relative to the rectangle */
+    top: 10px; /* Distance from the top edge of the rectangle */
+    right: 15px; /* Distance from the right edge of the rectangle */
+    font-size: 18px; /* Size of the X icon */
+    font-weight: bold; /* Make it stand out */
+    color: #333; /* Neutral color to match rectangle */
+    cursor: pointer; /* Interactive pointer for clicking */
+    z-index: 1100; /* Ensure it sits above other content */
+    transition: transform 0.2s ease-in-out; /* Add a hover animation */
+}
+
+.close-icon:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+    color: #ff0000; /* Change color to red for better feedback */
+}
+
+.close-icon:active {
+    transform: scale(0.9); /* Slight shrink on click */
+}
+
+/* Notes Text (text.png) */
+.modal-text {
+    width: 80%; /* Adjust width for better fit */
+    height: auto; /* Maintain aspect ratio */
+    margin: 20px auto; /* Space around the text */
+    display: block; /* Ensures the text image is centered */
+}
+
+/* OK Button (Okbutton.png) */
+.ok-button {
+    width: 40%; /* Resize to fit proportionally within rectangle */
+    height: auto;
+    cursor: pointer;
+    margin-top: 20px; /* Space from the content above */
+    transition: transform 0.2s ease-in-out; /* Interactive hover effect */
+}
+
+.ok-button:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.ok-button:active {
+    transform: scale(0.95); /* Shrink slightly when clicked */
+}
