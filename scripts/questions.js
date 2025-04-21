@@ -378,6 +378,7 @@ function renderQuestion() {
   // Dynamically load the first textq image
   const textImage1 = document.createElement("img");
   textImage1.src = `/assets/textq${currentQuestionIndex + 1}.webp`;
+  textImage1.src = `/assets/Textq${currentQuestionIndex + 1}.webp`;
   textImage1.alt = `First Text for Question ${currentQuestionIndex + 1}`;
   textImage1.className = "text-image";
   rectangle.appendChild(textImage1);
@@ -385,6 +386,7 @@ function renderQuestion() {
   // Conditionally add the question text image (if available)
   const questionTextImage = document.createElement("img");
   questionTextImage.src = `/assets/textquestion${currentQuestionIndex + 1}.webp`;
+  questionTextImage.src = `/assets/Textquestion${currentQuestionIndex + 1}.webp`;
   questionTextImage.alt = `Question Text Image ${currentQuestionIndex + 1}`;
   questionTextImage.className = "question-image";
   questionTextImage.onerror = () => {
