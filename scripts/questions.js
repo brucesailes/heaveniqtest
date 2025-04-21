@@ -366,7 +366,6 @@ function renderQuestion() {
   // Display the header image
   const headerImage = document.createElement("img");
   headerImage.src = `/assets/headerq${currentQuestionIndex + 1}.webp`;
-  headerImage.src = `/assets/Headerq${currentQuestionIndex + 1}.webp`;
   headerImage.alt = `Header for Question ${currentQuestionIndex + 1}`;
   headerImage.className = "header-image";
   questionContainer.appendChild(headerImage);
@@ -378,7 +377,6 @@ function renderQuestion() {
   // Dynamically load the first textq image
   const textImage1 = document.createElement("img");
   textImage1.src = `/assets/textq${currentQuestionIndex + 1}.webp`;
-  textImage1.src = `/assets/Textq${currentQuestionIndex + 1}.webp`;
   textImage1.alt = `First Text for Question ${currentQuestionIndex + 1}`;
   textImage1.className = "text-image";
   rectangle.appendChild(textImage1);
