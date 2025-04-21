@@ -1,4 +1,8 @@
 .env
 flask_session
 .venv
-
+venv
+# .gitignore
+/static/assets/video.mp4
+.vscode
+.__pychache__
