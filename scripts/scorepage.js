@@ -411,7 +411,7 @@ function updateServerScore(score) {
 // ----- Render the Score Page -----
 function renderScorePage() {
   const body = document.body;
-  body.style.background = "url('/assets/closingpage.png') center center / cover no-repeat";
+  body.style.background = "url('/assets/closingpage.webp') center center / cover no-repeat";
 
   const score = calculateScore();
   updateServerScore(score);
