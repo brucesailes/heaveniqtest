@@ -386,7 +386,6 @@ function renderQuestion() {
   // Conditionally add the question text image (if available)
   const questionTextImage = document.createElement("img");
   questionTextImage.src = `/assets/textquestion${currentQuestionIndex + 1}.webp`;
-  questionTextImage.src = `/assets/Textquestion${currentQuestionIndex + 1}.webp`;
   questionTextImage.alt = `Question Text Image ${currentQuestionIndex + 1}`;
   questionTextImage.className = "question-image";
   questionTextImage.onerror = () => {
