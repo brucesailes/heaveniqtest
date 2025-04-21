@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7; /* Backup color if the background image isn't loaded */
+    background-image: #f7f7f7; /* Backup color if the background image isn't loaded */
     color: #AD7E5E; 
 }
 

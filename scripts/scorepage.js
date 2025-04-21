@@ -411,7 +411,7 @@ function updateServerScore(score) {
 // ----- Render the Score Page -----
 function renderScorePage() {
   const body = document.body;
-  body.style.background = "url('/static/assets/closingpage.png') center center / cover no-repeat";
+  body.style.background = "url('/assets/closingpage.png') center center / cover no-repeat";
 
   const score = calculateScore();
   updateServerScore(score);
@@ -435,12 +435,12 @@ function renderScorePage() {
   container.appendChild(scoreBox);
 
   const bibleGraphic = document.createElement("img");
-  bibleGraphic.src = "/static/assets/biblegraphic.webp";
+  bibleGraphic.src = "/assets/biblegraphic.webp";
   bibleGraphic.alt = "Bible Graphic";
   container.appendChild(bibleGraphic);
 
   const firstText = document.createElement("img");
-  firstText.src = "/static/assets/firsttext.webp";
+  firstText.src = "/assets/firsttext.webp";
   firstText.alt = "First Text";
   container.appendChild(firstText);
 
@@ -448,12 +448,12 @@ function renderScorePage() {
   buttonGrid.className = "button-grid";
 
   const buttons = [
-    { src: "/static/assets/answers.webp", alt: "Answers", url: "answers.html" },
-    { src: "/static/assets/buttonlearn.webp", alt: "Learn", url: "video.html" },
-    { src: "/static/assets/invite.webp", alt: "Invite", url: "invite.html" },
-    { src: "/static/assets/feedback.webp", alt: "Feedback", url: "feedback.html" },
-    { src: "/static/assets/sources.webp", alt: "Sources", url: "sources.html" },
-    { src: "/static/assets/aboutus.webp", alt: "About Us", url: "aboutus.html" }
+    { src: "/assets/answers.webp", alt: "Answers", url: "answers.html" },
+    { src: "/assets/buttonlearn.webp", alt: "Learn", url: "video.html" },
+    { src: "/assets/invite.webp", alt: "Invite", url: "invite.html" },
+    { src: "/assets/feedback.webp", alt: "Feedback", url: "feedback.html" },
+    { src: "/assets/sources.webp", alt: "Sources", url: "sources.html" },
+    { src: "/assets/aboutus.webp", alt: "About Us", url: "aboutus.html" }
   ];
 
   buttons.forEach((button) => {
@@ -480,7 +480,7 @@ function renderScorePage() {
   homeButton.alt = "Home Button";
   homeButton.className = "home-button";
   homeButton.onclick = () => {
-    window.location.href = "mobile.html";
+    window.location.href = "index.html";
   };
   container.appendChild(homeButton);
 }

@@ -361,11 +361,11 @@ function renderQuestion() {
   questionContainer.innerHTML = "";
 
   // Set the background image for the page
-  document.body.style.background = "url('/static/assets/bg1.webp') center center / cover no-repeat";
+  document.body.style.background = "url('/assets/bg1.webp') center center / cover no-repeat";
 
   // Display the header image
   const headerImage = document.createElement("img");
-  headerImage.src = `/static/assets/headerq${currentQuestionIndex + 1}.webp`;
+  headerImage.src = `/assets/headerq${currentQuestionIndex + 1}.webp`;
   headerImage.alt = `Header for Question ${currentQuestionIndex + 1}`;
   headerImage.className = "header-image";
   questionContainer.appendChild(headerImage);
@@ -376,14 +376,14 @@ function renderQuestion() {
 
   // Dynamically load the first textq image
   const textImage1 = document.createElement("img");
-  textImage1.src = `/static/assets/textq${currentQuestionIndex + 1}.webp`;
+  textImage1.src = `/assets/textq${currentQuestionIndex + 1}.webp`;
   textImage1.alt = `First Text for Question ${currentQuestionIndex + 1}`;
   textImage1.className = "text-image";
   rectangle.appendChild(textImage1);
 
   // Conditionally add the question text image (if available)
   const questionTextImage = document.createElement("img");
-  questionTextImage.src = `/static/assets/textquestion${currentQuestionIndex + 1}.webp`;
+  questionTextImage.src = `/assets/textquestion${currentQuestionIndex + 1}.webp`;
   questionTextImage.alt = `Question Text Image ${currentQuestionIndex + 1}`;
   questionTextImage.className = "question-image";
   questionTextImage.onerror = () => {
@@ -394,7 +394,7 @@ function renderQuestion() {
 
   // Add a divider image
   const dividerImage = document.createElement("img");
-  dividerImage.src = `/static/assets/dividershortened.webp`;
+  dividerImage.src = `/assets/dividershortened.webp`;
   dividerImage.alt = `Divider for Question ${currentQuestionIndex + 1}`;
   dividerImage.className = "divider-image";
   rectangle.appendChild(dividerImage);
@@ -448,7 +448,7 @@ function renderQuestion() {
   const nextButton = document.getElementById("nextButton");
   nextButton.style.display = "none"; // Hide by default until an option is selected
   if (currentQuestionIndex < questions.length - 1) {
-    nextButton.src = "/static/assets/next.webp";
+    nextButton.src = "/assets/next.webp";
     nextButton.onclick = () => {
       saveAnswer();
       currentQuestionIndex++;
