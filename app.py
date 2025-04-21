@@ -117,7 +117,7 @@ def invite():
     message_body = f"Hello,\n\n{your_name or 'Anonymous'} has invited you to learn more!\n\n"
     if comment:
         message_body += f"Comment: {comment}\n\n"
-    message_body += "Visit: http://yourdomain.com/learn.html\n\nBest regards."
+    message_body += "Visit: https://heaveniqtest.vercel.app/learn.html\n\nBest regards."
 
     try:
         msg = MIMEText(message_body)
