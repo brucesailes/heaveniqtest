@@ -366,6 +366,7 @@ function renderQuestion() {
   // Display the header image
   const headerImage = document.createElement("img");
   headerImage.src = `/assets/headerq${currentQuestionIndex + 1}.webp`;
+  headerImage.src = `/assets/Headerq${currentQuestionIndex + 1}.webp`;
   headerImage.alt = `Header for Question ${currentQuestionIndex + 1}`;
   headerImage.className = "header-image";
   questionContainer.appendChild(headerImage);
