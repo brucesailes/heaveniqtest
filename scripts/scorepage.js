@@ -392,7 +392,7 @@ function updateServerScore(score) {
   
     console.log("Submitting score to server:", score);
   
-    fetch("http://127.0.0.1:5000/set_score", {
+    fetch("https://heaveniqtest.vercel.app/set_score", {
       method: "POST",
       credentials: "include",  // Ensure your session cookie is sent
       headers: {
