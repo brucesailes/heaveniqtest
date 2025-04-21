@@ -34,24 +34,32 @@ const questionsAndAnswers = [
   { letter: "E" },
 ];
 
+const container = document.getElementById("qa-container");
 
-  const container = document.getElementById("qa-container");
+questionsAndAnswers.forEach((item, index) => {
+  // Create a wrapper div for each question and answer pair
+  const questionWrapper = document.createElement("div");
+  questionWrapper.className = "question-wrapper";  // Add a class for styling
   
-  questionsAndAnswers.forEach((item) => {
-    const questionEl = document.createElement("p");
-    questionEl.className = "question";
-    questionEl.textContent = item.question;
-  
-    const answerEl = document.createElement("p");
-    answerEl.className = "answer";
-    answerEl.textContent = item.answer;
-    answerEl.innerHTML = `<strong>${item.letter}.</strong> ${item.answer}`;
-  
-    container.appendChild(questionEl);
-    container.appendChild(answerEl);
-  });
-  
-  document.getElementById("okButton").addEventListener("click", () => {
-    window.location.href = "mobile.html"; // or another page
-  });
-  
+  // Create the image element for the question (q1.png, q2.png, etc.)
+  const questionImage = document.createElement("img");
+  questionImage.src = `/static/assets/q${index + 1}.webp`; // Adjust path if necessary
+  questionImage.alt = `Question ${index + 1}`;
+  questionImage.className = "question-image";  // Add a class for styling
+
+  // Create the answer element
+  const answerElement = document.createElement("p");
+  answerElement.className = "answer";
+  answerElement.innerHTML = `<strong>${item.letter}</strong>`; // Only the letter
+
+  // Append image and answer to the wrapper div
+  questionWrapper.appendChild(questionImage);
+  questionWrapper.appendChild(answerElement);
+
+  // Append the wrapper div to the container
+  container.appendChild(questionWrapper);
+});
+
+document.getElementById("okButton").addEventListener("click", () => {
+  window.location.href = "mobile.html"; // or another page
+});

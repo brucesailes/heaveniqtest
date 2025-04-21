@@ -435,12 +435,12 @@ function renderScorePage() {
   container.appendChild(scoreBox);
 
   const bibleGraphic = document.createElement("img");
-  bibleGraphic.src = "/static/assets/biblegraphic.png";
+  bibleGraphic.src = "/static/assets/biblegraphic.webp";
   bibleGraphic.alt = "Bible Graphic";
   container.appendChild(bibleGraphic);
 
   const firstText = document.createElement("img");
-  firstText.src = "/static/assets/firsttext.png";
+  firstText.src = "/static/assets/firsttext.webp";
   firstText.alt = "First Text";
   container.appendChild(firstText);
 
@@ -448,12 +448,12 @@ function renderScorePage() {
   buttonGrid.className = "button-grid";
 
   const buttons = [
-    { src: "/static/assets/answers.png", alt: "Answers", url: "answers.html" },
-    { src: "/static/assets/buttonlearn.png", alt: "Learn", url: "video.html" },
-    { src: "/static/assets/invite.png", alt: "Invite", url: "invite.html" },
-    { src: "/static/assets/feedback.png", alt: "Feedback", url: "feedback.html" },
-    { src: "/static/assets/sources.png", alt: "Sources", url: "sources.html" },
-    { src: "/static/assets/aboutus.png", alt: "About Us", url: "aboutus.html" }
+    { src: "/static/assets/answers.webp", alt: "Answers", url: "answers.html" },
+    { src: "/static/assets/buttonlearn.webp", alt: "Learn", url: "video.html" },
+    { src: "/static/assets/invite.webp", alt: "Invite", url: "invite.html" },
+    { src: "/static/assets/feedback.webp", alt: "Feedback", url: "feedback.html" },
+    { src: "/static/assets/sources.webp", alt: "Sources", url: "sources.html" },
+    { src: "/static/assets/aboutus.webp", alt: "About Us", url: "aboutus.html" }
   ];
 
   buttons.forEach((button) => {
@@ -471,12 +471,12 @@ function renderScorePage() {
   container.appendChild(buttonGrid);
 
   const secondText = document.createElement("img");
-  secondText.src = "/static/assets/secondtext.png";
+  secondText.src = "/static/assets/secondtext.webp";
   secondText.alt = "Second Text";
   container.appendChild(secondText);
 
   const homeButton = document.createElement("img");
-  homeButton.src = "/static/assets/homebutton.png";
+  homeButton.src = "/static/assets/homebutton.webp";
   homeButton.alt = "Home Button";
   homeButton.className = "home-button";
   homeButton.onclick = () => {

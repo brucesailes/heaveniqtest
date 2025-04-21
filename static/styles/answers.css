@@ -7,13 +7,17 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: url('/static/assets/answerbackground.png') no-repeat center center;
+  background: url('/static/assets/answerbackground.webp') no-repeat center center;
   background-size: cover;
   color: #333;
   padding: 20px;
   line-height: 1.5;
 }
 
+h1 {
+  text-align: center;
+  color: whitesmoke;
+}
 /* Semi-transparent white box */
 #qa-container {
   background-color: rgba(255, 255, 255, 0.92);
@@ -22,30 +26,40 @@ body {
   max-width: 960px;
   margin: 0 auto;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
+  gap: 20px;
+  text-align: center;
   overflow-x: hidden;
 }
 
-/* Question Style */
-.question {
-  font-weight: bold;
-  margin-top: 20px;
-  font-size: 1.05rem;
-  color: #111;
+/* Wrapper for question image and answer */
+.question-wrapper {
+  display: flex;
+  align-items: center; /* Align image and answer side by side */
+  justify-content: center; /* Center align the content */
+}
+
+/* Question Image Style */
+.question-image {
+  max-width: 100px;  /* Adjust the size of the question image */
+  height: auto;
+  margin-right: 10px;  /* Space between the image and the answer */
 }
 
 /* Answer Style */
 .answer {
-  margin-top: 6px;
-  margin-bottom: 16px;
-  font-size: 0.98rem;
+  font-size: 1rem;
   color: #222;
+  display: flex;
+  align-items: center; /* Vertically align the letter with the image */
 }
 
 /* Emphasize the letter */
 .answer strong {
   color: #e70c0c;
   font-weight: 700;
-  margin-right: 4px;
+  margin-left: 4px;
 }
 
 /* OK Button */
@@ -65,14 +79,15 @@ body {
   height: auto;
 }
 
-/* Responsive tweaks */
+/* Maintain 3 columns layout on mobile as well */
 @media (max-width: 600px) {
   #qa-container {
     padding: 16px;
+    grid-template-columns: repeat(3, 1fr);  /* Keep 3 columns */
   }
 
-  .question {
-    font-size: 1rem;
+  .question-image {
+    max-width: 80px;  /* Adjust image size for mobile if needed */
   }
 
   .answer {
