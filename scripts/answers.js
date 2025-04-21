@@ -43,7 +43,7 @@ questionsAndAnswers.forEach((item, index) => {
   
   // Create the image element for the question (q1.png, q2.png, etc.)
   const questionImage = document.createElement("img");
-  questionImage.src = `/static/assets/q${index + 1}.webp`; // Adjust path if necessary
+  questionImage.src = `/assets/q${index + 1}.webp`; // Adjust path if necessary
   questionImage.alt = `Question ${index + 1}`;
   questionImage.className = "question-image";  // Add a class for styling
 

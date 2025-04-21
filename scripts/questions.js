@@ -456,7 +456,7 @@ function renderQuestion() {
     };
   } else {
     // Last question: set up the Exit button
-    nextButton.src = "/static/assets/exit.webp";
+    nextButton.src = "/assets/exit.webp";
     nextButton.onclick = () => {
       saveAnswer(); // Save the final answer
 

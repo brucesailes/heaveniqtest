@@ -471,12 +471,12 @@ function renderScorePage() {
   container.appendChild(buttonGrid);
 
   const secondText = document.createElement("img");
-  secondText.src = "/static/assets/secondtext.webp";
+  secondText.src = "/assets/secondtext.webp";
   secondText.alt = "Second Text";
   container.appendChild(secondText);
 
   const homeButton = document.createElement("img");
-  homeButton.src = "/static/assets/homebutton.webp";
+  homeButton.src = "/assets/homebutton.webp";
   homeButton.alt = "Home Button";
   homeButton.className = "home-button";
   homeButton.onclick = () => {

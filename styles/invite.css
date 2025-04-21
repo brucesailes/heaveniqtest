@@ -3,15 +3,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arial', sans-serif;
-  background: url('/static/assets/feedbackground.webp') no-repeat center center fixed;
+  background: url("/assets/invitebackground.webp") no-repeat center center fixed;
   background-size: cover;
-  color: #AD7E5E;
+  color: #AD7E5E; 
   text-align: center;
 }
 
-/* Feedback Container with White Box (70% opacity) */
-.feedback-container {
-  background: rgba(255, 255, 255, 0.7); /* 70% opaque white */
+/* Invite Container with White Box (70% opacity) */
+.invite-container {
+  background: rgba(255, 255, 255, 0.7);  /* 70% opaque white */
   margin: 20px auto;
   padding: 20px;
   width: 90%;
@@ -21,7 +21,7 @@ body {
 }
 
 /* Header Image Styling */
-.feedback-header {
+.invite-header {
   width: 100%;
   max-width: 300px;
   height: auto;
@@ -29,8 +29,8 @@ body {
   margin: 0 auto 20px;
 }
 
-/* Feedback Form Styling */
-.feedback-form {
+/* Invite Form Styling */
+.invite-form {
   width: 100%;
 }
 
@@ -40,37 +40,39 @@ body {
   text-align: left;
 }
 
-.feedback-form label {
+.invite-form label {
   display: block;
   margin-bottom: 5px;
   font-size: 0.9rem;
 }
 
 /* Input Fields Styling */
-.feedback-form input[type="text"], /* Added Name Input Styling */
-.feedback-form input[type="email"],
-.feedback-form textarea {
+.invite-form input[type="email"],
+.invite-form input[type="text"],
+.invite-form textarea {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: #f9f9f9; /* Light background for better readability */
-}
-
-.feedback-form input[type="text"]:focus, /* Focus Effect for Name Input */
-.feedback-form input[type="email"]:focus,
-.feedback-form textarea:focus {
-  border-color: #AD7E5E; /* Highlight border when focused */
-  outline: none;
-  background-color: #fff; /* Brighten the background */
+  
 }
 
 /* Textarea Styling */
-.feedback-form textarea {
+.invite-form textarea {
   resize: vertical;
   min-height: 80px;
+}
+
+/* Checkbox Styling */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
 }
 
 /* Button Group Styling */
@@ -82,7 +84,7 @@ body {
   margin-top: 20px;
 }
 
-.send-btn,
+.invite-btn,
 .cancel-btn {
   flex: 1;
   display: block;
@@ -90,7 +92,7 @@ body {
   border: none;           /* Removes the default border */
   padding: 0;             /* Removes default padding */
   margin: 0;              /* Ensures no additional space */
-  outline: none;
+  outline: none;  
 }
 
 .button-group img {
@@ -113,11 +115,11 @@ body {
 
 /* Responsive Adjustments for Extra-Small Devices */
 @media (max-width: 320px) {
-  .feedback-form label {
+  .invite-form label {
     font-size: 0.8rem;
   }
-  .feedback-form input,
-  .feedback-form textarea {
+  .invite-form input, 
+  .invite-form textarea {
     font-size: 0.9rem;
   }
 }
