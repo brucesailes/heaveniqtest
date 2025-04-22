@@ -1,70 +1,75 @@
-/* Mobile-First General Styling */
-hhtml, body {
+/* Global Reset & Safe Centering */
+html, body {
   height: 100%;
-  margin: 10px;
+  margin: 0;
   padding: 0;
-  overflow-x: hidden; /* 🚫 Prevent horizontal scroll */
+  overflow-x: hidden; /* Prevent sideways scroll */
+  font-family: 'Arial', sans-serif;
+  background: url('/assets/learnbackground.webp') no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Main Content Wrapper */
+.content-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  margin: auto;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: url('/assets/learnbackground.webp') no-repeat center center;
-    background-attachment: scroll; /* instead of 'fixed' */
-    background-size: cover;
-    background-size: cover;
-    color: #000;
-  }
-    /* Content Container: One-Column Stacking */
-  .content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    box-sizing: border-box; /* 👈 Prevent padding from blowing up width */
-  }
-  .learn-header,
-  .learn-text,
-  video {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
-    box-sizing: border-box;
-  }
-    
-  
-  
-  /* Text Container */
-  .text-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  /* Back Button Container */
-  .back-btn-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  .back-button {
-    width: 80px;       /* Adjust to desired size */
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-  }
-  .back-button:hover {
-    transform: scale(1.05);
-  }
-  .back-button:active {
-    transform: scale(0.95);
-  }
-  
+/* Header Image */
+.learn-header {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Text Image */
+.learn-text {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Video Styling */
+video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+
+/* Back Button */
+.back-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.back-button {
+  width: 80px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+.back-button:hover {
+  transform: scale(1.05);
+}
+.back-button:active {
+  transform: scale(0.95);
+}
