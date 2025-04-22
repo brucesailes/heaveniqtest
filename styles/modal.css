@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+
     justify-content: center;
     align-items: center;
     z-index: 1000; /* Ensure the modal appears above other content */
@@ -27,7 +27,6 @@
     width: 300px; /* Adjust rectangle width for mobile screens */
     height: auto; /* Auto height to fit content dynamically */
     padding: 20px; /* Add padding inside the rectangle */
-    border-radius: 10px; /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some depth */
     display: flex; /* Flexbox to position content inside the rectangle */
     flex-direction: column; /* Stack children vertically */
