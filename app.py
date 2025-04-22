@@ -116,6 +116,10 @@ def invite():
     friend_email = request.form.get('friend_email')
     your_name = request.form.get('your_name', '').strip()
     comment = request.form.get('comment', '').strip()
+    user_email = request.form.get('user_email', '').strip()
+
+    if user_email and '@' not in user_email:
+        return "Invalid email address! The email must contain an '@' symbol.", 400
 
     subject = "You're Invited to Learn More!"
     message_body = f"Hello,\n\n{your_name or 'Anonymous'} has invited you to learn more!\n\n"
