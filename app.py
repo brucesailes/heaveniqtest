@@ -22,10 +22,14 @@ Session(app)
 def send_feedback():
     user_feedback = request.form.get('user_feedback', '').strip()
     user_email = request.form.get('user_email', '').strip()
+    
 
     if not user_feedback:
         return "Feedback cannot be empty!", 400
 
+    if user_email and '@' not in user_email:
+        return "Invalid email address! The email must contain an '@' symbol.", 400
+    
     subject = "User Feedback - Application"
     message_body = f"Feedback from User:\n\n{user_feedback}\n\n"
     if user_email:
