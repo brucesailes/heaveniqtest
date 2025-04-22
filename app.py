@@ -48,7 +48,7 @@ def send_feedback():
             server.sendmail(msg['From'], [msg['To']], msg.as_string())
 
         # Redirect to the email sent confirmation page
-        return redirect(url_for('https://heaveniqtest.onrender.com/success'))
+        return redirect(url_for('success'))
     except Exception as e:
         return f"Error sending feedback: {str(e)}", 500
 
@@ -136,7 +136,7 @@ def invite():
             server.sendmail(msg['From'], [msg['To']], msg.as_string())
 
        # Redirect to the email sent confirmation page
-        return redirect(url_for('https://heaveniqtest.onrender.com/success'))
+        return redirect(url_for('success'))
     except Exception as e:
         return f"Error sending email: {str(e)}", 500
     ### ---------------- SUCCESS ROUTE ---------------- ###
