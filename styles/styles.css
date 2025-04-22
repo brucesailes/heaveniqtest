@@ -4,123 +4,113 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    color: #ffffff; /* Makes text white for contrast against the background */
+    color: #ffffff;
     background: url('/assets/bg1.webp') no-repeat center center fixed;
     background-size: cover;
-    height: 100vh; /* Ensures the page fills the entire viewport */
-}
-
-/* Header Image Styling */
-.header-image {
-    width: 90%; /* Adjusts the width to fit the screen while maintaining the aspect ratio */
-    max-width: 600px; /* Sets a maximum width for larger screens */
-    height: auto; /* Maintains the image's aspect ratio */
-    display: block;
-    margin: 20px auto 10px; /* Centers the image and adds spacing */
-}
-
-/* Button Container Styling */
-.button-container {
+    min-height: 100vh;
     display: flex;
-    flex-direction: column; /* Stack all elements vertically */
-    align-items: center; /* Center-align content */
-    gap: 20px; /* Space between each element */
-    margin-top: 30px;
-}
-
-/* Angel Graphic Styling */
-.angel-graphic {
-    width: 150px; /* Mobile-friendly size */
-    height: auto; /* Maintain aspect ratio */
-}
-
-/* Start Test Button Styling */
-.start {
-    width: 150px; /* Matches the AngelGraphic size */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 80px; /* make space for footer */
+    box-sizing: border-box;
+  }
+  
+  /* Header Image Styling */
+  .header-image {
+    width: 95%;
+    max-width: 650px;
     height: auto;
-    cursor: pointer; /* Makes it interactive */
-    transition: transform 0.2s ease-in-out;
-}
-
-.start:hover {
-    transform: scale(1.05); /* Slight hover effect */
-}
-
-.start:active {
-    transform: scale(0.95); /* Slight shrink on click */
-}
-
-/* Harp Graphic Styling */
-.harp-graphic {
-    width: 150px; /* Adjust size for mobile */
+    margin: 20px auto 10px;
+  }
+  
+  /* Button Container Styling */
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    margin-top: 40px;
+  }
+  
+  /* Graphic Images */
+  .angel-graphic,
+  .harp-graphic {
+    width: 180px;
     height: auto;
-    margin-top: 20px; /* Adds spacing above the HarpGraphic */
-}
-
-/* How to Get to Heaven Button Styling */
-.how-to {
-    width: 150px; /* Mobile-friendly size */
+  }
+  
+  /* Buttons */
+  .start,
+  .how-to {
+    width: 180px;
     height: auto;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
-}
-
-.how-to:hover {
+  }
+  
+  .start:hover,
+  .how-to:hover {
     transform: scale(1.05);
-}
-
-.how-to:active {
+  }
+  
+  .start:active,
+  .how-to:active {
     transform: scale(0.95);
-}
-
-/* Footer Container Styling */
-.footer-container {
+  }
+  
+  /* Footer Container Styling */
+  .footer-container {
     display: flex;
-    justify-content: space-between; /* Align left and right elements */
-    align-items: center; /* Vertically center the content */
-    position: absolute; /* Position elements at the bottom */
-    bottom: 0; /* Align footer at the screen bottom */
-    width: 100%; /* Ensure the container spans the screen width */
-    padding: 10px 20px; /* Add padding for spacing */
-    box-sizing: border-box; /* Include padding within the width and height */
-}
-
-/* Invite a Friend Section */
-.invite {
-    padding: 10px 20px; /* Padding inside the box */
-    margin-right: 10px; /* Space between the invite and its container's edge */
-    color: #ffffff; /* White text for contrast */
-    text-align: center; /* Center the text within the box */
-    font-size: 14px; /* Font size optimized for mobile devices */
-}
-
-/* About Us Section */
-.about {
-    padding: 10px 20px;
-    margin-left: 10px; /* Space between About Us and its container's edge */
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 12px 24px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.4); /* semi-transparent for readability */
+    backdrop-filter: blur(5px);
+  }
+  
+  /* Footer Links */
+  .invite, .about {
     color: #ffffff;
-    text-align: center;
-    font-size: 14px;
-}
-
-/* Extra Mobile Tweaks (Optional)
-   These media queries further ensure that on very small screen widths all 
-   elements remain readable and spaced well.
-*/
-@media (max-width: 320px) {
+    font-size: 16px;
+    padding: 10px 20px;
+    text-decoration: none;
+  }
+  
+  /* Small Devices */
+  @media (max-width: 480px) {
     .header-image {
-        width: 95%;
-        margin: 10px auto;
+      width: 98%;
     }
-    .start,
-    .how-to,
+  
     .angel-graphic,
-    .harp-graphic {
-        width: 120px;
+    .harp-graphic,
+    .start,
+    .how-to {
+      width: 160px;
     }
-    .invite,
-    .about {
-        font-size: 12px;
-        padding: 8px 16px;
+  
+    .invite, .about {
+      font-size: 14px;
+      padding: 8px 16px;
     }
-}
+  }
+  
+  @media (max-width: 320px) {
+    .angel-graphic,
+    .harp-graphic,
+    .start,
+    .how-to {
+      width: 140px;
+    }
+  
+    .invite, .about {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+  }
+  
