@@ -1,5 +1,5 @@
 body {
-  background: url('/assets/aboutbackground.webp') no-repeat center center fixed;
+  background: url('/static/assets/aboutbackground.webp') no-repeat center center fixed;
   background-size: cover;
     color: #ffffff;
     font-family: Arial, sans-serif;
