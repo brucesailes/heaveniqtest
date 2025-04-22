@@ -18,18 +18,18 @@ Session(app)
 
 ### ---------------- FEEDBACK ROUTE ---------------- ###
 
+
 @app.route('/feedback', methods=['POST'])
 def send_feedback():
     user_feedback = request.form.get('user_feedback', '').strip()
     user_email = request.form.get('user_email', '').strip()
-    
 
     if not user_feedback:
         return "Feedback cannot be empty!", 400
 
     if user_email and '@' not in user_email:
         return "Invalid email address! The email must contain an '@' symbol.", 400
-    
+
     subject = "User Feedback - Application"
     message_body = f"Feedback from User:\n\n{user_feedback}\n\n"
     if user_email:
@@ -57,6 +57,7 @@ def send_feedback():
         return f"Error sending feedback: {str(e)}", 500
 
 ### ---------------- INVITE + SCORE ROUTES ---------------- ###
+
 
 @app.route('/clear_session', methods=['GET', 'POST'])
 def clear_session():
@@ -149,12 +150,14 @@ def invite():
         return f"Error sending email: {str(e)}", 500
     ### ---------------- SUCCESS ROUTE ---------------- ###
 
+
 @app.route('/success')
 def success():
     # Serve the static success.html page
     return send_from_directory('static', 'success.html')
 
 ### ---------------- START SERVER ---------------- ###
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

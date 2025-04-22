@@ -33,6 +33,21 @@ main {
   align-items: center;
 }
 
+/* Footer Links */
+.invite, .about {
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Add this hover effect */
+.invite:hover, .about:hover {
+  transform: scale(1.05);
+}
+
+
 /* Header Image Styling */
 .header-image {
   width: 95%;
@@ -104,9 +119,13 @@ main {
   font-size: 16px;
   padding: 10px 20px;
   text-decoration: none;
+  transition: transform 0.2s ease-in-out;
 }
 
-/* Small Devices */
+#invite:active {
+  transform: scale(2);
+}
+
 @media (max-width: 480px) {
   .header-image {
       width: 98%;
