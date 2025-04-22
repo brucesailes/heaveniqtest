@@ -76,7 +76,7 @@ header {
 }
 
 .back-button {
-  width: 80px;
+  width: 100px;
   height: auto;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
