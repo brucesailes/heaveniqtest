@@ -1,12 +1,13 @@
 /* Mobile-First General Styling */
-html, body {
+hhtml, body {
   height: 100%;
-  margin: 0;
+  margin: 10px;
   padding: 0;
+  overflow-x: hidden; /* 🚫 Prevent horizontal scroll */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
 }
 
 body {
@@ -17,27 +18,27 @@ body {
     background-size: cover;
     color: #000;
   }
-  
-  /* Header Styling */
-  .learn-header {
-    display: block;
-    width: 90%;
-    max-width: 600px;
-    height: auto;
-    margin: 20px auto;
-  }
-  
-  /* Content Container: One-Column Stacking */
+    /* Content Container: One-Column Stacking */
   .content-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
+    width: 100%;
     max-width: 600px;
-    margin: 0 auto;
-    padding: 20px 0;
-    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box; /* 👈 Prevent padding from blowing up width */
   }
+  .learn-header,
+  .learn-text,
+  video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    box-sizing: border-box;
+  }
+    
   
   
   /* Text Container */
@@ -46,21 +47,6 @@ body {
     display: flex;
     justify-content: center;
   }
-  .learn-text {
-    max-width: 600px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-  
-/* Video */
-video {
-  max-width: 600px;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
   /* Back Button Container */
   .back-btn-container {
     display: flex;
