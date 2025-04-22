@@ -418,7 +418,12 @@ function renderQuestion() {
 
     // Show the Next button when the user selects an option
     input.addEventListener("change", () => {
-      document.getElementById("nextButton").style.display = "inline-block";
+        console.log("Radio option selected"); // Log message for debugging
+        const nextButton = document.getElementById("nextButton");
+        if (nextButton) {
+           console.log("Next button found"); // Log message when the next button is found
+           nextButton.style.display = "inline-block"; // This makes the next button visible
+        }
     });
 
     label.appendChild(input);

@@ -1,10 +1,15 @@
 /* General Page Styling */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Sour Gummy", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
     margin: 0;
     padding: 0;
     background-image: #f7f7f7; /* Backup color if the background image isn't loaded */
     color: #AD7E5E; 
+    font-variation-settings:
+    "wdth" 100;
 }
 
 /* Question Container */

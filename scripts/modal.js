@@ -14,7 +14,7 @@ fetch("modal.html")
         });
 
         document.getElementById("okButton").addEventListener("click", function() {
-            window.open("questions.html", "_blank"); // Open in a new tab
+            window.location.href = "questions.html";
         });
         
     })
