@@ -3,9 +3,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  background: #dbe4f0; /* Fallback color similar to your image */
   background: url('/assets/aboutbackground.webp') no-repeat center center fixed;
   background-size: cover;
 }
+
 
 /* White box container with 70% opacity, optimized for mobile */
 .white-box {
