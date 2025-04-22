@@ -1,13 +1,17 @@
-/* Reset defaults and set up a mobile-friendly background */
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: #dbe4f0; /* Fallback color similar to your image */
+  background: #dbe4f0;
   background: url('/assets/aboutbackground.webp') no-repeat center center fixed;
   background-size: cover;
 }
 
+html, body {
+  overflow-x: hidden;
+  touch-action: manipulation;
+  overscroll-behavior: none;
+}
 
 /* White box container with 70% opacity, optimized for mobile */
 .white-box {
@@ -56,5 +60,11 @@ body {
   }
   .btn {
     width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
   }
 }
