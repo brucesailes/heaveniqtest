@@ -1,4 +1,4 @@
-from flask import Flask, request, session
+from flask import Flask, request, session, redirect, url_for, send_from_directory
 import smtplib
 from email.mime.text import MIMEText
 from flask_session import Session
@@ -47,8 +47,8 @@ def send_feedback():
             server.login(email_username, email_password)
             server.sendmail(msg['From'], [msg['To']], msg.as_string())
 
-        return "Feedback sent successfully!", 200
-
+        # Redirect to the email sent confirmation page
+        return redirect(url_for('email_sent'))
     except Exception as e:
         return f"Error sending feedback: {str(e)}", 500
 
@@ -135,10 +135,16 @@ def invite():
             server.login(email_username, email_password)
             server.sendmail(msg['From'], [msg['To']], msg.as_string())
 
-        return "Invitation sent successfully!", 200
-
+       # Redirect to the email sent confirmation page
+        return redirect(url_for('email_sent'))
     except Exception as e:
         return f"Error sending email: {str(e)}", 500
+    ### ---------------- SUCCESS ROUTE ---------------- ###
+
+@app.route('/success')
+def success():
+    # Serve the static success.html page
+    return send_from_directory('static', 'success.html')
 
 ### ---------------- START SERVER ---------------- ###
 

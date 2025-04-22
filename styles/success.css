@@ -1,0 +1,21 @@
+body {
+  background: url('/assets/aboutbackground.webp') no-repeat center center fixed;
+  background-size: cover;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .success-container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  
