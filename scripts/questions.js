@@ -370,62 +370,81 @@ function renderQuestion() {
   headerImage.className = "header-image";
   questionContainer.appendChild(headerImage);
 
-  // Create a container (rectangle) for the question content
-  const rectangle = document.createElement("div");
-  rectangle.className = "rectangle";
+ // Create the rectangle container
+const rectangle = document.createElement("div");
+rectangle.className = "rectangle";
 
-  // Dynamically load the first textq image
-  const textImage1 = document.createElement("img");
-  textImage1.src = `/assets/textq${currentQuestionIndex + 1}.webp`;
-  textImage1.alt = `First Text for Question ${currentQuestionIndex + 1}`;
-  textImage1.className = "text-image";
-  rectangle.appendChild(textImage1);
+// First text image
+const textImage1 = document.createElement("img");
+textImage1.src = `/assets/textq${currentQuestionIndex + 1}.webp`;
+textImage1.alt = `First Text for Question ${currentQuestionIndex + 1}`;
+textImage1.className = "text-image";
+rectangle.appendChild(textImage1);
 
-  // Conditionally add the question text image (if available)
-  const questionTextImage = document.createElement("img");
-  questionTextImage.src = `/assets/textquestion${currentQuestionIndex + 1}.webp`;
-  questionTextImage.alt = `Question Text Image ${currentQuestionIndex + 1}`;
-  questionTextImage.className = "question-image";
-  questionTextImage.onerror = () => {
-    questionTextImage.style.display = "none";
-  };
-  rectangle.appendChild(questionTextImage);
+// Question image
+const questionTextImage = document.createElement("img");
+questionTextImage.src = `/assets/textquestion${currentQuestionIndex + 1}.webp`;
+questionTextImage.alt = `Question Text Image ${currentQuestionIndex + 1}`;
+questionTextImage.className = "question-image";
+questionTextImage.onerror = () => {
+  questionTextImage.style.display = "none";
+};
+rectangle.appendChild(questionTextImage);
 
-  // Add a divider image
+// Options container (create now to append later)
+const optionsContainer = document.createElement("div");
+optionsContainer.className = "options-container";
+currentQuestion.options.forEach((option) => {
+  const label = document.createElement("label");
+  const input = document.createElement("input");
+  input.type = "radio";
+  input.name = `q${currentQuestionIndex}`;
+  input.value = option;
+
+  if (userAnswers[currentQuestionIndex] === option) {
+    input.checked = true;
+  }
+
+  input.addEventListener("change", () => {
+    const nextButton = document.getElementById("nextButton");
+    if (nextButton) {
+      nextButton.style.display = "inline-block";
+    }
+  });
+
+  label.appendChild(input);
+  label.appendChild(document.createTextNode(option));
+  optionsContainer.appendChild(label);
+});
+
+// Function to append optional image + divider + options
+function appendAfterSecondText() {
   const dividerImage = document.createElement("img");
   dividerImage.src = `/assets/dividershortened.webp`;
   dividerImage.alt = `Divider for Question ${currentQuestionIndex + 1}`;
   dividerImage.className = "divider-image";
   rectangle.appendChild(dividerImage);
 
-  // Add the options for this question
-  const optionsContainer = document.createElement("div");
-  optionsContainer.className = "options-container";
-  currentQuestion.options.forEach((option) => {
-    const label = document.createElement("label");
-    const input = document.createElement("input");
-    input.type = "radio";
-    input.name = `q${currentQuestionIndex}`;
-    input.value = option;
-
-    if (userAnswers[currentQuestionIndex] === option) {
-      input.checked = true;
-    }
-
-    input.addEventListener("change", () => {
-      const nextButton = document.getElementById("nextButton");
-      if (nextButton) {
-        nextButton.style.display = "inline-block";
-      }
-    });
-
-    label.appendChild(input);
-    label.appendChild(document.createTextNode(option));
-    optionsContainer.appendChild(label);
-  });
-
   rectangle.appendChild(optionsContainer);
-  questionContainer.appendChild(rectangle);
+}
+
+// Second optional image
+const secondTextImage = new Image();
+secondTextImage.src = `/assets/textq${currentQuestionIndex + 1}-2.webp`;
+secondTextImage.alt = `Second Text for Question ${currentQuestionIndex + 1}`;
+secondTextImage.className = "text-image";
+
+secondTextImage.onload = () => {
+  rectangle.appendChild(secondTextImage);
+  appendAfterSecondText();
+};
+
+secondTextImage.onerror = () => {
+  appendAfterSecondText();
+};
+
+// Finally append the whole rectangle (everything else comes later)
+questionContainer.appendChild(rectangle);
 
   // ----- Configure the Back Button -----
   const backButton = document.getElementById("backButton");
