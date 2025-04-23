@@ -109,7 +109,8 @@ body {
   .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: url('/assets/backgroundsource.webp') no-repeat center center fixed;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,7 +120,7 @@ body {
   /* Modal box */
   .content-box {
     position: relative;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.7);
     padding: 1rem;
     width: 95%;
     justify-content: center;
@@ -202,7 +203,8 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
+  background: url('/assets/backgroundsource.webp') no-repeat center center fixed;
+  background-size: cover;
   display: none;
   justify-content: center;
   align-items: center;
@@ -216,6 +218,7 @@ body {
 
 /* Modal content */
 #learnModal .content-box {
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 15px;
   padding: 1rem;
   width: 100%;
@@ -282,7 +285,8 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
+  background: url('/assets/backgroundsource.webp') no-repeat center center fixed;
+  background-size: cover;
   display: none;
   justify-content: center;
   align-items: center;
@@ -345,14 +349,6 @@ body {
   align-items: center;
 }
 
-/* .button-group button {
-  margin: 0;
-  padding: 0;
-  border: none;
-  outline: none;
-  background: none; 
-}  */
-
 .invite-btn img,
 .invite-cancel-btn img {
   width: 150px;
@@ -382,6 +378,8 @@ body {
 
 /* Feedback Modal Overlay */
 .feedback-container {
+  background: url('/assets/backgroundsource.webp') no-repeat center center fixed;
+  background-size: cover;
   position: fixed;
   top: 0;
   left: 0;
@@ -441,20 +439,6 @@ body {
   resize: vertical;
 }
 
-/* Button Group */
-/* .button-group {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
-
-/* .button-group button {
-  border: none;
-  outline: none;
-  background: none;
-  width: 100px;
-} */
-
 .custom-btn {
   background-color: #AD7E5E;
   color: white;
@@ -490,7 +474,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Dark background overlay */
+  background: url('/assets/backgroundsource.webp') no-repeat center center fixed;
+  background-size: cover;
   display: none; /* Hidden by default */
   align-items: center;
   justify-content: center;
@@ -499,7 +484,7 @@ body {
 
 /* White box container for Sources content */
 #sourcesModal .white-box {
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
   padding: 2rem;
   border-radius: 12px;
   max-width: 500px;
@@ -574,7 +559,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6); /* Dark background overlay */
+  background: url('/assets/backgroundsource.webp') no-repeat center center fixed;
+  background-size: cover;
   display: none; /* Hidden by default */
   align-items: center;
   justify-content: center;
@@ -583,7 +569,7 @@ body {
 
 /* White box container for About Us content */
 #aboutUsModal .white-box {
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
   padding: 2rem;
   border-radius: 12px;
   max-width: 500px;
