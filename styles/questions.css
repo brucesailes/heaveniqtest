@@ -25,6 +25,7 @@ body {
     align-self: flex-start;
     width: 50px; /* or whatever fits */
     height: auto;
+    margin-top: 0px;
     margin-bottom: 1px;
     margin-right: auto;
 }
@@ -49,7 +50,7 @@ body {
 .rectangle {
     background-color: #ffffff; /* Solid white background */
     width: 90%; /* Adjust rectangle width for mobile screens */
-    padding: 10px;
+    padding: 0px 10px;
     border-radius: 15px; /* Smooth, rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
     display: flex; /* Flexbox layout */
