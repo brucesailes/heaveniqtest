@@ -374,6 +374,27 @@ function renderQuestion() {
 const rectangle = document.createElement("div");
 rectangle.className = "rectangle";
 
+// Hell Banner 
+const questionsWithBanner = new Set([5, 8, 11, 14, 17, 27, 30, 32]);
+
+if (questionsWithBanner.has(currentQuestionIndex + 1)) {
+  const hellBanner = document.createElement("img");
+  hellBanner.src = "/assets/hellbanner.png";
+  hellBanner.alt = "Hell Banner";
+  hellBanner.className = "hell-banner";
+  rectangle.appendChild(hellBanner);
+}
+
+const questionsWithBanner2 = new Set([1, 2, 3, 4, 6, 7, 9, 10, 12, 13, 15, 16, 18, 19, 20, 21, 22, 23, 24, 25, 28, 29, 31, 33]);
+
+if (questionsWithBanner2.has(currentQuestionIndex + 1)) {
+  const heavenBanner = document.createElement("img");
+  heavenBanner.src = "/assets/heavenbanner.png";
+  heavenBanner.alt = "heaven Banner";
+  heavenBanner.className = "heaven-banner";
+  rectangle.appendChild(heavenBanner);
+}
+
 // First text image
 const textImage1 = document.createElement("img");
 textImage1.src = `/assets/textq${currentQuestionIndex + 1}.webp`;

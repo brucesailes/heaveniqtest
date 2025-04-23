@@ -13,6 +13,21 @@ body {
     "wdth" 100;
 }
 
+.hell-banner {
+    align-self: flex-start;
+    width: 50px; /* or whatever fits */
+    height: auto;
+    margin-bottom: 1px;
+    margin-right: auto;
+}
+
+.heaven-banner {
+    align-self: flex-start;
+    width: 50px; /* or whatever fits */
+    height: auto;
+    margin-bottom: 1px;
+    margin-right: auto;
+}
 /* Question Container */
 #question-container {
     display: flex;
