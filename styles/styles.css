@@ -147,17 +147,16 @@ main {
   }
 }
 
-@media (max-width: 320px) {
-  .angel-graphic,
-  .harp-graphic,
-  .start,
-  .how-to {
-      width: 140px;
-  }
-
-  .invite, .about {
-      font-size: 12px;
-      padding: 6px 12px;
-  }
+.angel-graphic,
+.harp-graphic,
+.start,
+.how-to {
+  width: 160px;
 }
+
+.invite, .about {
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
 
