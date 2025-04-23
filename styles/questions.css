@@ -4,7 +4,7 @@ body {
     src: url('/assets/fonts/Lithospro.ttf') format('truetype');
     font-optical-sizing: auto;
     font-weight: 400;
-    font-style: normal;
+    font-style: bold;
     margin: 0;
     padding: 0;
     background-image: #f7f7f7; /* Backup color if the background image isn't loaded */
