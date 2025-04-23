@@ -439,7 +439,7 @@ const answerLetters = [
     // Score display
     const scoreHeader = document.createElement('h1');
     scoreHeader.className = 'score-header';
-    scoreHeader.textContent = 'Your Score is:';
+    scoreHeader.textContent = 'YOUR SCORE IS:';
     container.appendChild(scoreHeader);
   
     const scoreBox = document.createElement('div');
@@ -469,7 +469,7 @@ const answerLetters = [
   
     const buttons = [
       { src: '/assets/answers.webp', alt: 'Answers', action: openAnswersModal },
-      { src: '/assets/buttonlearn.webp', alt: 'Learn', url: 'video.html' },
+      { src: '/assets/buttonlearn.webp', alt: 'Learn', action: openLearnModal },
       { src: '/assets/invite.webp', alt: 'Invite', url: 'invite.html' },
       { src: '/assets/feedback.webp', alt: 'Feedback', url: 'feedback.html' },
       { src: '/assets/sources.webp', alt: 'Sources', url: 'sources.html' },
@@ -567,6 +567,47 @@ if (!document.getElementById('answersModal')) {
     }
   
     ensureModalHiddenOnLoad(); // 🔒 Ensure hidden on page load
+  });
+  
+
+  // Inject Learn Modal once
+if (!document.getElementById('learnModal')) {
+    const learnModalHTML = `
+      <div id="learnModal" class="overlay hidden">
+        <div class="content-box">
+          <img src="/assets/learnheader.webp" alt="Learn Header" class="learn-header">
+          <div class="text-container">
+            <img src="/assets/learntext.webp" alt="Learn Text" class="learn-text">
+          </div>
+          <div class="video-container">
+            <iframe 
+              id="heavenVideo" 
+              src="https://www.youtube.com/embed/oLdrqwYg-38" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <button id="closeLearnModalBtn"><img src="/assets/OkButton.webp" alt="OK Button" /></button>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', learnModalHTML);
+  }
+  
+  // Learn Modal Logic
+  function openLearnModal() {
+    document.getElementById("learnModal").classList.remove("hidden");
+    document.getElementById("learnModal").style.display = "flex";
+  }
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const closeBtn = document.getElementById("closeLearnModalBtn");
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        document.getElementById("learnModal").style.display = "none";
+      });
+    }
   });
   
   // Initialize

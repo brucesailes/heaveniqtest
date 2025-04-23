@@ -20,6 +20,28 @@
       </button>
     </div>
   </div>
+
+<!-- Modal for Learn Video -->
+<div id="learnModal" class="overlay hidden">
+  <div class="content-box">
+    <div class="video-container">
+      <iframe 
+        id="heavenVideo" 
+        src="https://www.youtube.com/embed/oLdrqwYg-38" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+    
+    <!-- OK Button -->
+    <button id="closeLearnModalBtn" onclick="document.getElementById('learnModal').style.display = 'none'">
+      <img src="/assets/OkButton.webp" alt="OK Button" />
+    </button>
+  </div>
+</div>
+
+  
   
       
     <!-- Content will be dynamically rendered by scorepage.js -->
