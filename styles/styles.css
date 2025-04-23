@@ -20,7 +20,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 60px; /* Adds spacing above footer */
+  margin-bottom: 20px; /* Adds spacing above footer */
 }
 
 /* Footer moves with the page (remove fixed positioning) */
@@ -130,7 +130,7 @@ main {
 
 @media (max-width: 480px) {
   main {
-    padding-bottom: 100px; /* Gives extra breathing room above footer */
+    margin-bottom: 40px; /* Gives extra breathing room above footer */
   }
   .header-image {
       width: 98%;
