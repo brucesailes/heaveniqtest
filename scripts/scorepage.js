@@ -533,28 +533,42 @@ const answerLetters = [
   }
   
   
-    // Insert modal HTML into body once
-    if (!document.getElementById('answersModal')) {
-      const modalHTML = `
-  <div id="answersModal" class="overlay hidden">
-    <div class="content-box">
-      <span class="close-button">&times;</span>
-      <h1 class="title">Answers</h1>
-      <div id="qa-container" class="qa-container"></div>
-      <button id="okButton"><img src="/assets/OkButton.webp" alt="OK Button" /></button>
-    </div>
-  </div>`;
-      body.insertAdjacentHTML('beforeend', modalHTML);
-      document.addEventListener("DOMContentLoaded", function () {
-        const okButton = document.getElementById("okButton");
-      
-        function closeAnswersModal() {
-          document.getElementById("answersModal").style.display = "none";
-        }
-      
-        okButton.addEventListener("click", closeAnswersModal);
-      });
-    }      
+// Insert modal HTML into body once (only if not already present)
+if (!document.getElementById('answersModal')) {
+    const modalHTML = `
+      <div id="answersModal" class="overlay hidden">
+        <div class="content-box">
+          <span class="close-button">&times;</span>
+          <h1 class="title">Answers</h1>
+          <div id="qa-container" class="qa-container"></div>
+          <button id="okButton"><img src="/assets/OkButton.webp" alt="OK Button" /></button>
+        </div>
+      </div>`;
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+  }
+  
+  // ✅ Always attach the listener, regardless of whether modal existed already
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("answersModal");
+    const okButton = document.getElementById("okButton");
+  
+    function closeAnswersModal() {
+      modal.classList.add('hidden');
+      modal.style.display = "none";
+    }
+  
+    function ensureModalHiddenOnLoad() {
+      modal.classList.add('hidden');
+      modal.style.display = "none";
+    }
+  
+    if (okButton) {
+      okButton.addEventListener("click", closeAnswersModal);
+    }
+  
+    ensureModalHiddenOnLoad(); // 🔒 Ensure hidden on page load
+  });
+  
   // Initialize
   window.onload = renderScorePage;
   

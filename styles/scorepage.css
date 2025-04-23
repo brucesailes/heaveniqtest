@@ -185,7 +185,9 @@ body {
     margin-top: 1rem;
     gap: 1rem;
   }
-  
+  .hidden {
+    display: none; 
+  }
   /* Responsive tweaks */
   @media (max-width: 768px)  {
     .white-box {
