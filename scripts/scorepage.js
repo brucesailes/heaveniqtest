@@ -569,47 +569,47 @@ if (!document.getElementById('answersModal')) {
     ensureModalHiddenOnLoad(); // 🔒 Ensure hidden on page load
   });
   
-
-  // Inject Learn Modal once
-if (!document.getElementById('learnModal')) {
-    const learnModalHTML = `
-      <div id="learnModal" class="overlay hidden">
-        <div class="content-box">
-          <img src="/assets/learnheader.webp" alt="Learn Header" class="learn-header">
-          <div class="text-container">
-            <img src="/assets/learntext.webp" alt="Learn Text" class="learn-text">
-          </div>
-          <div class="video-container">
-            <iframe 
-              id="heavenVideo" 
-              src="https://www.youtube.com/embed/oLdrqwYg-38" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-            </iframe>
-          </div>
-          <button id="closeLearnModalBtn"><img src="/assets/OkButton.webp" alt="OK Button" /></button>
+  function learnModalHTML() {
+    const modalHTML = 
+    `
+    <div id="learnModal" class="overlay hidden">
+      <div class="content-box">
+        <img src="/static/assets/learnheader.webp" alt="Learn Header" class="learn-header">
+        <div class="text-container">
+          <img src="/static/assets/learntext.webp" alt="Learn Text" class="learn-text">
         </div>
+        <div class="video-container">
+          <iframe 
+            id="heavenVideo" 
+            src="https://www.youtube.com/embed/oLdrqwYg-38" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <button id="closeLearnModalBtn">OK</button>
       </div>
+    </div>
     `;
-    document.body.insertAdjacentHTML('beforeend', learnModalHTML);
-  }
+    
+    // Inject HTML into the page
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
   
-  // Learn Modal Logic
-  function openLearnModal() {
-    document.getElementById("learnModal").classList.remove("hidden");
-    document.getElementById("learnModal").style.display = "flex";
-  }
-  
-  document.addEventListener("DOMContentLoaded", function () {
+    // Now that it's in the DOM, we can safely attach the event listener
     const closeBtn = document.getElementById("closeLearnModalBtn");
     if (closeBtn) {
       closeBtn.addEventListener("click", function () {
         document.getElementById("learnModal").style.display = "none";
       });
     }
-  });
-
+  }
+  
+  // Modal open logic stays the same
+  function openLearnModal() {
+    document.getElementById("learnModal").classList.remove("hidden");
+    document.getElementById("learnModal").style.display = "flex";
+  }
+  
 // Invite Button Functions 
 function openInviteModal() {
   const inviteModal = document.getElementById('inviteModal');
