@@ -63,12 +63,8 @@
 
       <!-- Buttons -->
       <div class="button-group">
-        <button type="submit" class="invite-btn">
-          <img src="/assets/invitebutton.webp" alt="Invite" />
-        </button>
-        <button type="button" id="cancelInviteModalBtn" class="invite-cancel-btn">
-          <img src="/assets/cancelbutton.webp" alt="Cancel" />
-        </button>
+        <button type="submit" class="custom-btn invite-btn">INVITE</button>
+        <button type="button" id="cancelInviteModalBtn" class="custom-btn invite-cancel-btn">CANCEL</button>
       </div>
     </form>
   </div>
@@ -76,9 +72,7 @@
 
 <!-- Feed Back Modal Begins -->
 <div id="feedbackModal" class="feedback-container overlay hidden">
-<div class="feedback-container">
-  <!-- Header Image -->
-  <!-- Feedback Form -->
+  <div class="feedback-container"> 
   <form action="https://heaveniqtest.onrender.com/feedbackscorepage" method="post" class="feedback-form">
     <!-- Your Name (Optional) -->
     <div class="form-group">
@@ -101,12 +95,10 @@
 
 <!-- Buttons -->
 <div class="button-group">
-  <button type="submit" class="send-btn">
-    <img src="/assets/sendbutton.webp" alt="Send Feedback">
-  </button>
-  <button type="button" class="cancel-btn">
-    <img src="/assets/cancelbutton.webp" alt="Cancel">
-  </button>
+  <button type="submit" class="custom-btn send-btn">SEND</button>
+  <button type="button" id="cancelFeedbackModalBtn" class="custom-btn cancel-btn">CANCEL</button>
+</div>
+
 </div>
     <!-- Content will be dynamically rendered by scorepage.js -->
     <script src="/scripts/scorepage.js"></script>
