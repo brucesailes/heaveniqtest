@@ -86,7 +86,7 @@ label {
 
 /* Next Button Styling */
 .nav-button {
-    width: 80px; /* Larger width for better visibility */
+    width: 100px; /* Larger width for better visibility */
     height: auto; /* Maintain aspect ratio */
     padding: 10px 20px; /* Add inner spacing for a larger clickable area */
     cursor: pointer; /* Interactive pointer */
