@@ -4,95 +4,239 @@ body {
     padding: 0;
     background: url('/assets/closingpage.webp') center center / cover no-repeat;
     font-family: "Sour Gummy", sans-serif;
-    font-variation-settings:
-    "wdth" 100;
+    font-variation-settings: "wdth" 100;
     text-align: center;
-}
-
-/* White box container */
-.white-box {
-    background: rgba(255, 255, 255, 0.7); /* 70% opacity */
-    margin: 5% auto;
-    padding: 20px;
-    width: 60%;
-    max-width: 800px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Score header */
-.score-header {
-    color: #AD7E5E;
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-/* Score box */
-.score-box {
-    background: #AD7E5E; /* Same color as header */
-    padding: 15px;
-    width: 200px;
-    margin: auto;
-    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-/* Score text inside the score box */
-.score-text {
-    font-size: 28px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    
+  }
+  
+  /* White box container */
+  .white-box {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  /* Score header */
+  .score-header {
+    color: #AD7E5E;
+    font-size: 2rem;
     font-weight: bold;
-    color: whitesmoke;
-}
+    margin-bottom: 1rem;
+  }
+  
+  /* Score box */
+  .score-box {
+    background: #AD7E5E;
+    padding: 15px 25px;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Score text inside score box */
+  .score-text {
+    font-size: 1.75rem;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  /* Static images section (graphic & text) */
+  .white-box img:not(.button-image):not(.home-button) {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 10px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-/* Mobile responsiveness */
-@media screen and (max-width: 768px) {
-    /* Adjust white-box padding and width */
+
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center; /* Optional: centers the whole grid if it’s smaller than the container */
+  }
+  .button-image {
+    max-width: 150px;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+  }
+  
+  /* Hover effect for regular buttons */
+  .button-image:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Special overrides for answers.webp */
+  .answers-image {
+    max-width: 120px; /* or whatever you want */
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    transition: transform 0.2s ease;
+  }
+  
+  /* Remove hover effect */
+  .answers-image:hover {
+    transform: scale(1.05);
+  }
+  
+  
+  /* Home button style */
+  .home-button {
+    width: 120px;
+    margin: 15px 0;
+    cursor: pointer;
+  }
+  
+  /* Overlay */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal box */
+  .content-box {
+    position: relative;
+    background: #fff;
+    padding: 1rem;
+    width: 95%;
+    justify-content: center;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Title */
+  .title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Q&A Grid */
+  .qa-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    overflow-x: hidden;
+    justify-content: center;
+  }
+  
+  /* Each QA block - row layout */
+  .question-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+  }
+  
+  /* Question images */
+  .question-image {
+    width: 45px;
+    height: auto;
+  }
+  
+  /* Answer letters (now beside) */
+  .answer {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* OK Button */
+  #okButton {
+    display: block;
+    margin: 1.5rem auto 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+  }
+  
+  /* Bottom text wrapper (First and Second Text) */
+  .bottom-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+  
+  /* Responsive tweaks */
+  @media (max-width: 768px)  {
     .white-box {
-        width: 90%; /* Increase width on smaller screens */
-        padding: 15px;
+      padding: 15px;
     }
-
-    /* Adjust the score header size */
+  
     .score-header {
-        font-size: 24px; /* Smaller font for mobile */
+      font-size: 24px;
     }
-
-    /* Adjust score box size */
+  
     .score-box {
-        width: 150px; /* Reduce width on smaller screens */
-        padding: 10px;
+      width: auto;
+      padding: 10px;
     }
-
-    /* Adjust score text font size */
+  
     .score-text {
-        font-size: 22px; /* Smaller font for mobile */
+      font-size: 22px;
     }
-}
-
-/* Extra small mobile screens */
-@media screen and (max-width: 480px) {
-    /* Adjust white-box padding and width */
+  
+    .button-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .question-image {
+      width: 35px;
+    }
+  
+    .answer {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
     .white-box {
-        width: 95%; /* Make it almost full width */
-        padding: 10px;
+      padding: 10px;
     }
-
-    /* Further reduce the score header size */
+  
     .score-header {
-        font-size: 20px;
+      font-size: 20px;
     }
-
-    /* Further adjust score box size */
+  
     .score-box {
-        width: 120px;
-        padding: 8px;
+      padding: 8px;
     }
-
-    /* Further reduce score text font size */
+  
     .score-text {
-        font-size: 18px;
+      font-size: 18px;
     }
-}
+  
+    .button-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  

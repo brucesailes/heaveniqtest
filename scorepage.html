@@ -11,6 +11,17 @@
     <title>Score Page</title>
 </head>
 <body>
+  <div id="answersModal" class="overlay hidden">
+    <div class="content-box">
+      <h1 class="title">Answers</h1>
+      <div id="qa-container" class="qa-container"></div>
+      <button id="okButton" onclick="document.getElementById('answersModal').style.display='none'">
+        <img src="/assets/OkButton.webp" alt="OK Button" />
+      </button>
+    </div>
+  </div>
+  
+      
     <!-- Content will be dynamically rendered by scorepage.js -->
     <script src="/scripts/scorepage.js"></script>
 </body>

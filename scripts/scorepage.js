@@ -349,141 +349,212 @@ const questions = [
   // Add more questions as needed
 ];
 
-// Get userAnswers from query parameters
-// ----- Retrieve the User's Answers from Query Parameters -----
-const urlParams = new URLSearchParams(window.location.search);
-const userAnswersParam = urlParams.get("userAnswers");
-
-if (!userAnswersParam) {
-  console.error("Missing userAnswers in URL parameters.");
-  alert("Unable to calculate your score. Please complete the test.");
-  window.location.href = "mobile.html";
-}
-
-const userAnswers = JSON.parse(userAnswersParam); // Parsed from URL parameter
-let scoreSubmitted = false;
-console.log("Questions:", questions);
-console.log("User Answers:", userAnswers);
-
-
-// ----- Calculate the Score -----
-function calculateScore() {
-    let score = 1;  // Start at 0 points
-    questions.forEach((question, index) => {
-      // (You might also want to trim and uppercase if needed for consistency)
-      if ((userAnswers[index] || "").trim().toUpperCase() === (question.correctAnswer || "").trim().toUpperCase()) {
+// Correct answers letters for modal display
+const answerLetters = [
+    "A","D","D","B","G","B","C","E","C","A","E",
+    "E","B","D","B","A","A","C","C","A","D",
+    "E","D","D","D","A","B","A","C","D","B","C","E"
+  ];
+  
+  // ---------- Modal Logic ----------
+  function openAnswersModal() {
+    const modal = document.getElementById('answersModal');
+    const container = document.getElementById('qa-container');
+    container.innerHTML = '';
+    answerLetters.forEach((letter, idx) => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'question-wrapper';
+  
+      const img = document.createElement('img');
+      img.src = `/assets/q${idx + 1}.webp`;
+      img.alt = `Question ${idx + 1}`;
+      img.className = 'question-image';
+  
+      const ans = document.createElement('p');
+      ans.className = 'answer';
+      ans.innerHTML = `<strong>${letter}</strong>`;
+  
+      wrapper.appendChild(img);
+      wrapper.appendChild(ans);
+      container.appendChild(wrapper);
+    });
+    modal.style.display = 'flex';
+  }
+  
+  function closeAnswersModal() {
+    document.getElementById('answersModal').style.display = 'none';
+  }
+  
+  // ---------- Score Page Logic ----------
+  
+  // Get userAnswers from URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const userAnswersParam = urlParams.get('userAnswers');
+  if (!userAnswersParam) {
+    alert('Unable to calculate your score. Please complete the test.');
+    window.location.href = 'mobile.html';
+  }
+  const userAnswers = JSON.parse(userAnswersParam);
+  
+  // Calculate Score
+  function calculateScore() {
+    let score = 0;
+    questions.forEach((q, i) => {
+      if ((userAnswers[i] || '').trim().toUpperCase() === (q.correctAnswer || '').trim().toUpperCase()) {
         score++;
       }
     });
-    console.log("Total number of questions:", questions.length);
     return score;
   }
   
-
-// ----- Send the Computed Score to the Server -----
-function updateServerScore(score) {
-    if (scoreSubmitted || localStorage.getItem("scoreSubmitted") === "true") {
-      console.log("Score already submitted.");
-      return;
-    }
-  
+  // Update Server
+  let scoreSubmitted = localStorage.getItem('scoreSubmitted') === 'true';
+  function updateServerScore(score) {
+    if (scoreSubmitted) return;
     scoreSubmitted = true;
-    localStorage.setItem("scoreSubmitted", "true");
-  
-    console.log("Submitting score to server:", score);
-  
-    fetch("https://heaveniqtest.onrender.com/set_score", {
-      method: "POST",
-      credentials: "include",  // Ensure your session cookie is sent
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: "score=" + score,
+    localStorage.setItem('scoreSubmitted', 'true');
+    fetch('https://heaveniqtest.onrender.com/set_score', {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `score=${score}`
     })
-    .then((response) => response.text())
-    .then((data) => {
-      console.log("Server response: " + data);
-    })
-    .catch((error) => console.error("Error updating score: ", error));
+    .then(res => res.text())
+    .then(console.log)
+    .catch(console.error);
   }
   
-
-// ----- Render the Score Page -----
-function renderScorePage() {
-  const body = document.body;
-  body.style.background = "url('/assets/closingpage.webp') center center / cover no-repeat";
-
-  const score = calculateScore();
-  updateServerScore(score);
-
-  const container = document.createElement("div");
-  container.className = "white-box";
-  body.appendChild(container);
-
-  const scoreHeader = document.createElement("h1");
-  scoreHeader.textContent = "Your Score is:";
-  scoreHeader.className = "score-header";
-  container.appendChild(scoreHeader);
-
-  const scoreBox = document.createElement("div");
-  scoreBox.className = "score-box";
-
-  const scoreText = document.createElement("span");
-  scoreText.textContent = `${score} / ${questions.length}`;
-  scoreText.className = "score-text";
-  scoreBox.appendChild(scoreText);
-  container.appendChild(scoreBox);
-
-  const bibleGraphic = document.createElement("img");
-  bibleGraphic.src = "/assets/biblegraphic.webp";
-  bibleGraphic.alt = "Bible Graphic";
-  container.appendChild(bibleGraphic);
-
-  const firstText = document.createElement("img");
-  firstText.src = "/assets/firsttext.webp";
-  firstText.alt = "First Text";
-  container.appendChild(firstText);
-
-  const buttonGrid = document.createElement("div");
-  buttonGrid.className = "button-grid";
-
-  const buttons = [
-    { src: "/assets/answers.webp", alt: "Answers", url: "answers.html" },
-    { src: "/assets/buttonlearn.webp", alt: "Learn", url: "video.html" },
-    { src: "/assets/invite.webp", alt: "Invite", url: "invite.html" },
-    { src: "/assets/feedback.webp", alt: "Feedback", url: "feedback.html" },
-    { src: "/assets/sources.webp", alt: "Sources", url: "sources.html" },
-    { src: "/assets/aboutus.webp", alt: "About Us", url: "aboutus.html" }
-  ];
-
-  buttons.forEach((button) => {
-    const link = document.createElement("a");
-    link.href = button.url;
-    link.target = "_blank";
-    const buttonImage = document.createElement("img");
-    buttonImage.src = button.src;
-    buttonImage.alt = button.alt;
-    buttonImage.className = "button-image";
-    link.appendChild(buttonImage);
-    buttonGrid.appendChild(link);
-  });
-
-  container.appendChild(buttonGrid);
-
-  const secondText = document.createElement("img");
-  secondText.src = "/assets/secondtext.webp";
-  secondText.alt = "Second Text";
-  container.appendChild(secondText);
-
-  const homeButton = document.createElement("img");
-  homeButton.src = "/assets/homebutton.webp";
-  homeButton.alt = "Home Button";
-  homeButton.className = "home-button";
-  homeButton.onclick = () => {
-    window.location.href = "index.html";
-  };
-  container.appendChild(homeButton);
-}
-
-// ----- Render the Score Page on Window Load -----
-window.onload = renderScorePage;
+  function renderScorePage() {
+    const body = document.body;
+    body.style.background = "url('/assets/closingpage.webp') center center / cover no-repeat";
+    
+    const score = calculateScore();
+    updateServerScore(score);
+  
+    // Create the container for the score page
+    const container = document.createElement('div');
+    container.className = 'white-box';
+    body.appendChild(container);
+  
+    // Score display
+    const scoreHeader = document.createElement('h1');
+    scoreHeader.className = 'score-header';
+    scoreHeader.textContent = 'Your Score is:';
+    container.appendChild(scoreHeader);
+  
+    const scoreBox = document.createElement('div');
+    scoreBox.className = 'score-box';
+  
+    const scoreText = document.createElement('span');
+    scoreText.className = 'score-text';
+    scoreText.textContent = `${score} / ${questions.length}`;
+    scoreBox.appendChild(scoreText);
+    container.appendChild(scoreBox);
+  
+    // Bible graphic and other top graphics (before buttons)
+    const topImagesWrapper = document.createElement('div');
+    topImagesWrapper.className = 'top-graphics';
+  
+    const bibleImage = document.createElement('img');
+    bibleImage.src = '/assets/biblegraphic.webp';
+    bibleImage.alt = 'Bible Graphic';
+    bibleImage.className = 'stacked-image';
+    topImagesWrapper.appendChild(bibleImage);
+  
+    container.appendChild(topImagesWrapper);
+  
+    // Buttons grid (2 rows × 3 columns) - Under the Bible graphic
+    const buttonGrid = document.createElement('div');
+    buttonGrid.className = 'button-grid';
+  
+    const buttons = [
+      { src: '/assets/answers.webp', alt: 'Answers', action: openAnswersModal },
+      { src: '/assets/buttonlearn.webp', alt: 'Learn', url: 'video.html' },
+      { src: '/assets/invite.webp', alt: 'Invite', url: 'invite.html' },
+      { src: '/assets/feedback.webp', alt: 'Feedback', url: 'feedback.html' },
+      { src: '/assets/sources.webp', alt: 'Sources', url: 'sources.html' },
+      { src: '/assets/aboutus.webp', alt: 'About Us', url: 'aboutus.html' }
+    ];
+  
+    buttons.forEach((btn) => {
+        const img = document.createElement('img');
+        img.src = btn.src;
+        img.alt = btn.alt;
+        img.className = 'button-image';
+      
+        // SPECIAL STYLING for answers.webp
+        if (btn.src.includes('answers.webp')) {
+          img.classList.add('answers-image');
+        }
+      
+        if (btn.url) {
+          const a = document.createElement('a');
+          a.href = btn.url;
+          a.appendChild(img);
+          buttonGrid.appendChild(a);
+        } else if (btn.action) {
+          img.style.cursor = 'pointer';
+          img.addEventListener('click', btn.action);
+      
+          // Wrap in div to keep spacing consistent
+          const wrapper = document.createElement('div');
+          wrapper.className = 'button-wrapper';
+          wrapper.appendChild(img);
+          buttonGrid.appendChild(wrapper);
+        }
+      });
+      
+    container.appendChild(buttonGrid);
+  
+    // Texts and home button (should be at the bottom of the structure)
+    const bottomTextWrapper = document.createElement('div');
+    bottomTextWrapper.className = 'bottom-text-wrapper';
+  
+    const firstText = document.createElement('img');
+    firstText.src = '/assets/firsttext.webp';
+    firstText.alt = 'First Text';
+    firstText.className = 'stacked-image';
+    bottomTextWrapper.appendChild(firstText);
+  
+    const secondText = document.createElement('img');
+    secondText.src = '/assets/secondtext.webp';
+    secondText.alt = 'Second Text';
+    secondText.className = 'stacked-image';
+    bottomTextWrapper.appendChild(secondText);
+  
+    const homeButton = document.createElement('img');
+    homeButton.src = '/assets/homebutton.webp';
+    homeButton.alt = 'Home Button';
+    homeButton.className = 'home-button';
+    homeButton.addEventListener('click', () => window.location.href = 'index.html');
+    bottomTextWrapper.appendChild(homeButton);
+  
+    container.appendChild(bottomTextWrapper);
+  }
+  
+  
+    // Insert modal HTML into body once
+    if (!document.getElementById('answersModal')) {
+      const modalHTML = `
+  <div id="answersModal" class="overlay hidden">
+    <div class="content-box">
+      <span class="close-button">&times;</span>
+      <h1 class="title">Answers</h1>
+      <div id="qa-container" class="qa-container"></div>
+      <button id="okButton"><img src="/assets/OkButton.webp" alt="OK Button" /></button>
+    </div>
+  </div>`;
+      body.insertAdjacentHTML('beforeend', modalHTML);
+      document.addEventListener("DOMContentLoaded", function () {
+        const okButton = document.getElementById("okButton");
+      
+        function closeAnswersModal() {
+          document.getElementById("answersModal").style.display = "none";
+        }
+      
+        okButton.addEventListener("click", closeAnswersModal);
+      });
+    }      
+  // Initialize
+  window.onload = renderScorePage;
+  
