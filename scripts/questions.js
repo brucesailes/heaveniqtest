@@ -387,7 +387,6 @@ function renderQuestion() {
   questionTextImage.alt = `Question Text Image ${currentQuestionIndex + 1}`;
   questionTextImage.className = "question-image";
   questionTextImage.onerror = () => {
-    // Hide the image if it doesn't exist
     questionTextImage.style.display = "none";
   };
   rectangle.appendChild(questionTextImage);
@@ -409,27 +408,22 @@ function renderQuestion() {
     input.name = `q${currentQuestionIndex}`;
     input.value = option;
 
-    // Restore a previously selected answer if it exists
     if (userAnswers[currentQuestionIndex] === option) {
       input.checked = true;
-      // Make sure the Next button is visible if an answer is already chosen
-      document.getElementById("nextButton").style.display = "inline-block";
     }
 
-    // Show the Next button when the user selects an option
     input.addEventListener("change", () => {
-        console.log("Radio option selected"); // Log message for debugging
-        const nextButton = document.getElementById("nextButton");
-        if (nextButton) {
-           console.log("Next button found"); // Log message when the next button is found
-           nextButton.style.display = "inline-block"; // This makes the next button visible
-        }
+      const nextButton = document.getElementById("nextButton");
+      if (nextButton) {
+        nextButton.style.display = "inline-block";
+      }
     });
 
     label.appendChild(input);
     label.appendChild(document.createTextNode(option));
     optionsContainer.appendChild(label);
   });
+
   rectangle.appendChild(optionsContainer);
   questionContainer.appendChild(rectangle);
 
@@ -437,12 +431,12 @@ function renderQuestion() {
   const backButton = document.getElementById("backButton");
   backButton.style.display = "inline-block";
   if (currentQuestionIndex === 0) {
-    backButton.textContent = "Exit to Mobile"; // At start of test
+    backButton.textContent = "Exit to Mobile";
     backButton.onclick = () => {
       window.location.href = "index.html";
     };
   } else {
-    backButton.textContent = "Back"; // Mid-test navigation
+    backButton.textContent = "Back";
     backButton.onclick = () => {
       currentQuestionIndex--;
       renderQuestion();
@@ -451,7 +445,7 @@ function renderQuestion() {
 
   // ----- Configure the Next/Exit Button -----
   const nextButton = document.getElementById("nextButton");
-  nextButton.style.display = "none"; // Hide by default until an option is selected
+  nextButton.style.display = userAnswers[currentQuestionIndex] ? "inline-block" : "none";
   if (currentQuestionIndex < questions.length - 1) {
     nextButton.src = "/assets/next.webp";
     nextButton.onclick = () => {
@@ -460,16 +454,12 @@ function renderQuestion() {
       renderQuestion();
     };
   } else {
-    // Last question: set up the Exit button
     nextButton.src = "/assets/exit.webp";
     nextButton.onclick = () => {
-      saveAnswer(); // Save the final answer
-
-      // Pass only the userAnswers through query parameters (since the questions are static on scorepage.js)
+      saveAnswer();
       const queryParams = new URLSearchParams({
         userAnswers: JSON.stringify(userAnswers)
       });
-      console.log(`Redirecting to: scorepage.html?${queryParams.toString()}`);
       window.location.href = `scorepage.html?${queryParams.toString()}`;
     };
   }
