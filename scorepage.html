@@ -66,7 +66,7 @@
         <button type="submit" class="invite-btn">
           <img src="/assets/invitebutton.webp" alt="Invite" />
         </button>
-        <button type="button" id="cancelInviteModalBtn" class="cancel-btn">
+        <button type="button" id="cancelInviteModalBtn" class="invite-cancel-btn">
           <img src="/assets/cancelbutton.webp" alt="Cancel" />
         </button>
       </div>
@@ -74,6 +74,40 @@
   </div>
 </div>
 
+<!-- Feed Back Modal Begins -->
+<div id="feedbackModal" class="feedback-container overlay hidden">
+<div class="feedback-container">
+  <!-- Header Image -->
+  <!-- Feedback Form -->
+  <form action="https://heaveniqtest.onrender.com/feedbackscorepage" method="post" class="feedback-form">
+    <!-- Your Name (Optional) -->
+    <div class="form-group">
+      <img src="/assets/feedbackheader.webp" alt="Feedback Header" class="feedback-header">
+      <label for="user-name">Your Name (Optional):</label>
+      <input type="text" id="user-name" name="user_name" placeholder="Your Name">
+    </div>
+
+    <!-- Your Email (Optional) -->
+    <div class="form-group">
+      <label for="user-email">Your Email (Optional):</label>
+      <input type="email" id="user-email" name="user_email" placeholder="Your email address">
+    </div>
+
+    <!-- Feedback Text Area -->
+    <div class="form-group">
+      <label for="feedback-text">Your Feedback:</label>
+      <textarea id="feedback-text" name="user_feedback" placeholder="Write your feedback here..." required></textarea>
+    </div>
+
+<!-- Buttons -->
+<div class="button-group">
+  <button type="submit" class="send-btn">
+    <img src="/assets/sendbutton.webp" alt="Send Feedback">
+  </button>
+  <button type="button" class="cancel-btn">
+    <img src="/assets/cancelbutton.webp" alt="Cancel">
+  </button>
+</div>
     <!-- Content will be dynamically rendered by scorepage.js -->
     <script src="/scripts/scorepage.js"></script>
 </body>

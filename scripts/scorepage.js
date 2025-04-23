@@ -471,9 +471,9 @@ const answerLetters = [
       { src: '/assets/answers.webp', alt: 'Answers', action: openAnswersModal },
       { src: '/assets/buttonlearn.webp', alt: 'Learn', action: openLearnModal },
       { src: '/assets/invite.webp', alt: 'Invite', action: openInviteModal },
-      { src: '/assets/feedback.webp', alt: 'Feedback', url: 'feedback.html' },
-      { src: '/assets/sources.webp', alt: 'Sources', url: 'sources.html' },
-      { src: '/assets/aboutus.webp', alt: 'About Us', url: 'aboutus.html' }
+      { src: '/assets/feedback.webp', alt: 'Feedback', action: openFeedbackModal },
+      { src: '/assets/sources.webp', alt: 'Sources', action: openSourcesModal },
+      { src: '/assets/aboutus.webp', alt: 'About Us', action: openAboutusmodal }
     ];
   
     buttons.forEach((btn) => {
@@ -610,19 +610,143 @@ if (!document.getElementById('learnModal')) {
     }
   });
 
-
-
-// Invite Modal Logic (Trigger from Invite Image)
+// Invite Button Functions 
 function openInviteModal() {
-  document.getElementById('inviteModal').classList.remove('hidden');
-  document.getElementById('inviteModal').style.display = 'flex'; // Show invite modal
+  const inviteModal = document.getElementById('inviteModal');
+  if (inviteModal) {
+    inviteModal.classList.remove('hidden');
+    inviteModal.style.display = 'flex';
+  }
 }
 
-// CLOSE the invite modal when clicking the cancel button
 document.getElementById('cancelInviteModalBtn')?.addEventListener('click', () => {
-  document.getElementById('inviteModal').classList.add('hidden');
-  document.getElementById('inviteModal').style.display = 'none'; // Hide invite modal
+  const modal = document.getElementById('inviteModal');
+  if (modal) {
+    modal.classList.add('hidden');
+    modal.style.display = 'none';
+  }
 });
+
+
+
+// Feedback Modal Logic (Trigger from Feedback Image or Button)
+function openFeedbackModal(e) {
+  e.preventDefault(); // Prevent any other action from triggering
+  const feedbackModal = document.getElementById('feedbackModal');
+  feedbackModal.classList.remove('hidden');
+  feedbackModal.style.display = 'flex';
+}
+// Ensure feedback modal is closed on cancel
+document.querySelector('.cancel-btn')?.addEventListener('click', (e) => {
+  e.preventDefault(); // Prevent the default behavior
+  const modal = document.getElementById('feedbackModal');
+  modal.classList.add('hidden');
+  modal.style.display = 'none';
+});
+
+function openSourcesModal() {
+  const modalHTML = `
+    <!-- Sources Modal -->
+    <div id="sourcesModal" class="overlay hidden">
+      <div class="white-box">
+        <!-- Header Section -->
+        <header>
+          <img src="/assets/sourceheader.webp" alt="Source Header" class="source-header">
+        </header>
+
+        <!-- Content Container -->
+        <div class="content-container">
+          <div class="content-scroll">
+            <div class="image-container">
+              <img src="/assets/sourcepicture.webp" alt="Source Picture" class="source-picture">
+            </div>
+            <div class="text-image-container">
+              <img src="/assets/sourcetext.webp" alt="Source Text" class="source-text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Back Button (Close Modal) -->
+        <div class="back-btn-container">
+          <button id="closeSourcesModalBtn" class="modal-close-btn">
+            <img src="/assets/backbutton.webp" alt="Back Button" class="back-button">
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Append the modal HTML to the body
+  document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+  // Get the modal and the close button
+  const modal = document.getElementById('sourcesModal');
+  const closeBtn = document.getElementById("closeSourcesModalBtn");
+
+  // Close the modal when the close button is clicked
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    modal.style.display = 'none';
+  });
+
+  // Show the modal
+  modal.classList.remove('hidden');
+  modal.style.display = 'flex';
+}
+
+
+
+function openAboutusmodal() {
+  const modalHTML = `
+    <!-- About Us Modal -->
+    <div id="aboutUsModal" class="overlay hidden">
+      <div class="white-box">
+        <!-- Header -->
+        <header>
+          <img src="/assets/aboutheader.webp" alt="About Header" class="source-header">
+        </header>
+
+        <!-- Two-Column Layout -->
+        <div class="content-container two-columns">
+          <div class="image-column">
+            <img src="/assets/Jeremiah.webp" alt="Jeremiah" class="jeremiah">
+          </div>
+          <div class="text-column">
+            <img src="/assets/abouttext.webp" alt="About Text" class="about-text">
+            <img src="/assets/ourstory.webp" alt="Our Story" class="our-story">
+            <img src="/assets/abouttext2.webp" alt="More Text" class="about-text2">
+          </div>
+        </div>
+
+        <!-- Back Button (Closes Modal) -->
+        <div class="back-btn-container">
+          <button id="closeAboutUsModalBtn" class="modal-close-btn">
+            <img src="/assets/backbutton.webp" alt="Back Button" class="back-button">
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Append to body
+  document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+  // Select modal and close button
+  const modal = document.getElementById('aboutUsModal');
+  const closeBtn = document.getElementById("closeAboutUsModalBtn");
+
+  // Add close functionality
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    modal.style.display = 'none';
+  });
+
+  // Show modal
+  modal.classList.remove('hidden');
+  modal.style.display = 'flex';
+}
+
+
 
   // Initialize
   window.onload = renderScorePage;

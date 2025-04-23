@@ -55,6 +55,45 @@ def send_feedback():
         return redirect(url_for('success'))
     except Exception as e:
         return f"Error sending feedback: {str(e)}", 500
+    
+
+    #### -------- Route for Feedback Modal ------- ####
+@app.route('/feedbackscorepage', methods=['POST'])
+def feedbackscorepage():
+    user_feedback = request.form.get('user_feedback', '').strip()
+    user_email = request.form.get('user_email', '').strip()
+
+    if not user_feedback:
+        return "Feedback cannot be empty!", 400
+
+    if user_email and '@' not in user_email:
+        return "Invalid email address! The email must contain an '@' symbol.", 400
+
+    subject = "User Feedback - Application"
+    message_body = f"Feedback from User:\n\n{user_feedback}\n\n"
+    if user_email:
+        message_body += f"Contact Email: {user_email}\n"
+
+    try:
+        msg = MIMEText(message_body)
+        msg['Subject'] = subject
+        msg['From'] = os.getenv('EMAIL_USERNAME', 'no-reply@yourdomain.com')
+        msg['To'] = os.getenv('CREATOR_EMAIL')
+
+        smtp_server = os.getenv('SMTP_SERVER', 'smtp.gmail.com')
+        smtp_port = int(os.getenv('SMTP_PORT', 587))
+        email_username = os.getenv('EMAIL_USERNAME')
+        email_password = os.getenv('EMAIL_PASSWORD')
+
+        with smtplib.SMTP(smtp_server, smtp_port) as server:
+            server.starttls()
+            server.login(email_username, email_password)
+            server.sendmail(msg['From'], [msg['To']], msg.as_string())
+
+        # Redirect to the email sent confirmation page
+        return redirect(url_for('success'))
+    except Exception as e:
+        return f"Error sending feedback: {str(e)}", 500
 
 ### ---------------- INVITE + SCORE ROUTES ---------------- ###
 
@@ -150,6 +189,8 @@ def invite():
         return f"Error sending email: {str(e)}", 500
     ### ---------------- SUCCESS ROUTE ---------------- ###
 
+
+# Route for the Invite Form MOdal #
 @app.route('/scorepage', methods=['POST'])
 def scorepage():
     friend_email = request.form.get('friend_email')
