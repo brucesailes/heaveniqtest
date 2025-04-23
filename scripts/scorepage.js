@@ -470,7 +470,7 @@ const answerLetters = [
     const buttons = [
       { src: '/assets/answers.webp', alt: 'Answers', action: openAnswersModal },
       { src: '/assets/buttonlearn.webp', alt: 'Learn', action: openLearnModal },
-      { src: '/assets/invite.webp', alt: 'Invite', url: 'invite.html' },
+      { src: '/assets/invite.webp', alt: 'Invite', action: openInviteModal },
       { src: '/assets/feedback.webp', alt: 'Feedback', url: 'feedback.html' },
       { src: '/assets/sources.webp', alt: 'Sources', url: 'sources.html' },
       { src: '/assets/aboutus.webp', alt: 'About Us', url: 'aboutus.html' }
@@ -609,7 +609,21 @@ if (!document.getElementById('learnModal')) {
       });
     }
   });
-  
+
+
+
+// Invite Modal Logic (Trigger from Invite Image)
+function openInviteModal() {
+  document.getElementById('inviteModal').classList.remove('hidden');
+  document.getElementById('inviteModal').style.display = 'flex'; // Show invite modal
+}
+
+// CLOSE the invite modal when clicking the cancel button
+document.getElementById('cancelInviteModalBtn')?.addEventListener('click', () => {
+  document.getElementById('inviteModal').classList.add('hidden');
+  document.getElementById('inviteModal').style.display = 'none'; // Hide invite modal
+});
+
   // Initialize
   window.onload = renderScorePage;
   

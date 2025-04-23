@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/scorepage.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Swanky+and+Moo+Moo&display=swap" rel="stylesheet">
     <title>Score Page</title>
 </head>
 <body>
@@ -35,7 +31,6 @@
         allowfullscreen>
       </iframe>
     </div>
-    
     <!-- OK Button -->
     <button id="closeLearnModalBtn" onclick="document.getElementById('learnModal').style.display = 'none'">
       <img src="/assets/OkButton.webp" alt="OK Button" />
@@ -43,9 +38,43 @@
   </div>
 </div>
 
-  
-  
+<!-- Invite Friend Modal (Overlay) -->
+<div id="inviteModal" class="invite-modal hidden">
+  <div class="invite-container">
+    <img src="/assets/invitefriend.webp" alt="Invite a Friend" class="invite-header" />
+    
+    <form action="https://heaveniqtest.onrender.com/scorepage" method="post" class="invite-form">
+      <!-- Friend's Email -->
+      <div class="form-group">
+        <label for="friend-email">Friend's Email:</label>
+        <input type="email" id="friend-email" name="friend_email" placeholder="Enter your friend's email" required />
+      </div>
       
+      <!-- Your Name (Optional) -->
+      <div class="form-group">
+        <label for="your-name">Your Name (Optional):</label>
+        <input type="text" id="your-name" name="your_name" placeholder="Your Name" />
+      </div>
+
+      <!-- Comment Section (Optional) -->
+      <div class="form-group">
+        <label for="comment">Comment (Optional):</label>
+        <textarea id="comment" name="comment" placeholder="Add a comment..."></textarea>
+      </div>
+
+      <!-- Buttons -->
+      <div class="button-group">
+        <button type="submit" class="invite-btn">
+          <img src="/assets/invitebutton.webp" alt="Invite" />
+        </button>
+        <button type="button" id="cancelInviteModalBtn" class="cancel-btn">
+          <img src="/assets/cancelbutton.webp" alt="Cancel" />
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
     <!-- Content will be dynamically rendered by scorepage.js -->
     <script src="/scripts/scorepage.js"></script>
 </body>

@@ -19,12 +19,32 @@ body {
   text-align: center;
 }
 
+/* Fullscreen Overlay for Invite Modal */
+.invite-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);  /* Dark overlay */
+  display: none;                  /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Show when active */
+.invite-modal:not(.hidden) {
+  display: flex;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
 /* Invite Container with White Box (70% opacity) */
 .invite-container {
-  background: rgba(255, 255, 255, 0.7);  /* 70% opaque white */
-  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.7);
   padding: 20px;
-  width: 90%;
+  width: 100%;
   max-width: 400px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -66,7 +86,6 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  
 }
 
 /* Textarea Styling */
@@ -98,11 +117,11 @@ body {
 .cancel-btn {
   flex: 1;
   display: block;
-  background: none;       /* Removes any default background */
-  border: none;           /* Removes the default border */
-  padding: 0;             /* Removes default padding */
-  margin: 0;              /* Ensures no additional space */
-  outline: none;  
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
 }
 
 .button-group img {
@@ -122,7 +141,6 @@ body {
 .button-group img:active {
   transform: scale(0.95);
 }
-
 /* Responsive Adjustments for Extra-Small Devices */
 @media (max-width: 320px) {
   .invite-form label {
