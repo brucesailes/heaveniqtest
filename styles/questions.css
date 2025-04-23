@@ -74,14 +74,14 @@ label {
 }
 
 
-/* Navigation Styling */
+
 /* Navigation Styling */
 .navigation {
     display: flex;
     justify-content: center; /* Center-align the Next button */
     align-items: center;
     width: 100%; /* Full width for proper alignment */
-    margin-top: 20px; /* Space above the button */
+    margin-top: 5px; /* Space above the button */
 }
 
 /* Next Button Styling */
