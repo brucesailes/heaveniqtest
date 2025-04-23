@@ -75,6 +75,7 @@ body {
   .button-image {
     max-width: 150px;
     border-radius: 10px;
+  
     transition: transform 0.2s ease;
   }
   
@@ -176,6 +177,7 @@ body {
     border: none;
     cursor: pointer;
     padding: 0.25rem;
+    transition: transform 0.2s ease-in-out;
   }
   
   /* Bottom text wrapper (First and Second Text) */
@@ -275,7 +277,7 @@ body {
 
 /* Modal Content Box */
 .invite-form {
-  background: white;
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 15px;
   padding: 1.5rem;
   width: 100%;
@@ -305,6 +307,7 @@ body {
 .form-group label {
   font-weight: bold;
   margin-bottom: 0.5rem;
+  color: #AD7E5E; 
 }
 
 .form-group input,
@@ -314,20 +317,33 @@ body {
   border: 1px solid #ccc;
   border-radius: 8px;
   resize: vertical;
+
 }
 
 /* Button Group */
 .button-group {
   display: flex;
+  padding: 0px 0px;
   justify-content: space-between;
   align-items: center;
 }
 
+.button-group button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none; /* Optional: depends on your design */
+}
+
 .invite-btn img,
 .cancel-btn img {
-  width: 120px;
-  height: auto;
+  width: 150px;
   cursor: pointer;
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
   transition: transform 0.2s ease-in-out;
 }
 
