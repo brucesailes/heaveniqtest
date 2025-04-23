@@ -1,6 +1,7 @@
 /* General Styling */
 body {
-  font-family: "Sour Gummy", sans-serif;
+  font-family: 'My Custom Font';
+  src: url('/assets/fonts/Lithospro.ttf') format('truetype');
   margin: 0;
   padding: 0;
   display: flex;
