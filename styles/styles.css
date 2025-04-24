@@ -1,6 +1,6 @@
 /* General Styling */
 body {
-  font-family: 'My Custom Font';
+  font-family: 'Lithospro';
   src: url('/assets/fonts/Lithospro.ttf') format('truetype');
   margin: 0;
   padding: 0;
@@ -13,6 +13,10 @@ body {
   background-size: cover;
   font-variation-settings:
     "wdth" 100;
+}
+@font-face {
+  font-family: 'Lithospro';
+  src: url('/assets/fonts/Lithospro.ttf') format('truetype');
 }
 
 /* Main content wrapper to push footer down */

@@ -14,6 +14,11 @@ body {
     overflow-x: hidden;
     
   }
+
+  @font-face {
+    font-family: 'Lithospro';
+    src: url('/assets/fonts/Lithospro.ttf') format('truetype');
+  }
   
   /* White box container */
   .white-box {

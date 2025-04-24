@@ -1,6 +1,6 @@
 /* General Page Styling */
 body {
-    font-family: 'My Custom Font';
+    font-family: 'Lithospro';
     src: url('/assets/fonts/Lithospro.ttf') format('truetype');
     font-optical-sizing: auto;
     font-weight: 400;
@@ -12,6 +12,11 @@ body {
     font-variation-settings:
     "wdth" 100;
 }
+
+@font-face {
+    font-family: 'Lithospro';
+    src: url('/assets/fonts/Lithospro.ttf') format('truetype');
+  }
 
 .hell-banner {
     align-self: flex-start;
