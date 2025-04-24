@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'Lithospro';
+    src: url('/assets/fonts/Lithospro.ttf') format('truetype');
+  }
 /* General Page Styling */
 body {
     font-family: 'Lithospro';
@@ -12,11 +16,6 @@ body {
     font-variation-settings:
     "wdth" 100;
 }
-
-@font-face {
-    font-family: 'Lithospro';
-    src: url('/assets/fonts/Lithospro.ttf') format('truetype');
-  }
 
 .hell-banner {
     align-self: flex-start;
@@ -55,7 +54,8 @@ body {
 .rectangle {
     background-color: #ffffff; /* Solid white background */
     width: 90%; /* Adjust rectangle width for mobile screens */
-    padding: 0px 10px;
+    padding: 0px 5px;
+    padding-bottom: 5px;
     border-radius: 15px; /* Smooth, rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
     display: flex; /* Flexbox layout */
@@ -161,11 +161,16 @@ input[type="radio"] {
   
   /* Label Styling to Ensure Consistent Alignment */
   label {
-    font-size: 1rem;                  /* Good size for mobile */
+    font-size: clamp(0.3rem, 2.5vw, 1.5rem);                  /* Good size for mobile */
     cursor: pointer;
-    display: flex;                    /* Use flex to align the radio and text */
-    align-items: center;              /* Vertically center align the radio and text */
-    gap: 8px;                         /* Space between radio button and label text */
-    line-height: 1.5;                 /* Improve readability */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.5;
+    background: #f9f9f9;
+    /* padding: 10px; */
+    border-radius: 2px;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);        /* Improve readability */
   }
   
