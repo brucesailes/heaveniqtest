@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background: url('/assets/closingpage.webp') center center / cover no-repeat;
-    font-family: 'My Custom Font';
+    font-family: 'Lithospro';
     src: url('/assets/fonts/Lithospro.ttf') format('truetype');
     font-variation-settings: "wdth" 100;
     text-align: center;
