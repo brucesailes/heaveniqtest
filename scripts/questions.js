@@ -8,7 +8,8 @@ const questions = [
             "E) ACCEPTS HIM AS THEIR LORD AND SAVIOR", 
             "F) DOES NOT CONTRIBUTE TO CLIMATE CHANGE"
         ],
-        correctAnswer: "A) BELIEVES IN HIM"
+        correctAnswer: "A) BELIEVES IN HIM",
+        points: 3.5
     },
     {
         options: [
@@ -18,7 +19,8 @@ const questions = [
             "D) THE ONE WHO DOES THE WILL OF MY FATHER WHO IS IN HEAVEN.", 
             "E) JESUS DID NOT SAY THIS AND EVERYBODY WILL GO TO HEAVEN BECAUSE THERE IS NO SUCH THING AS HELL."
         ],
-        correctAnswer: "D) THE ONE WHO DOES THE WILL OF MY FATHER WHO IS IN HEAVEN."
+        correctAnswer: "D) THE ONE WHO DOES THE WILL OF MY FATHER WHO IS IN HEAVEN.",
+        points: 3.5
     },
     {
         options: [
@@ -510,6 +512,17 @@ function saveAnswer() {
   const selectedOption = document.querySelector(`input[name="q${currentQuestionIndex}"]:checked`);
   userAnswers[currentQuestionIndex] = selectedOption ? selectedOption.value : null;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const radios = document.querySelectorAll('input[type="radio"]');
+  
+    radios.forEach(radio => {
+      radio.addEventListener("change", () => {
+        radio.style.pointerEvents = "auto"; // Let it be visible/interactable now
+      });
+    });
+  });
+  
 
 // ----- Initialize the Quiz on Window Load -----
 window.onload = renderQuestion;

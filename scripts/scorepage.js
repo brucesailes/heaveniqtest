@@ -8,7 +8,8 @@ const questions = [
           "E) ACCEPTS HIM AS THEIR LORD AND SAVIOR", 
           "F) DOES NOT CONTRIBUTE TO CLIMATE CHANGE"
       ],
-      correctAnswer: "A) BELIEVES IN HIM"
+      correctAnswer: "A) BELIEVES IN HIM",
+      points: 3.5
   },
   {
       options: [
@@ -18,7 +19,8 @@ const questions = [
           "D) THE ONE WHO DOES THE WILL OF MY FATHER WHO IS IN HEAVEN.", 
           "E) JESUS DID NOT SAY THIS AND EVERYBODY WILL GO TO HEAVEN BECAUSE THERE IS NO SUCH THING AS HELL."
       ],
-      correctAnswer: "D) THE ONE WHO DOES THE WILL OF MY FATHER WHO IS IN HEAVEN."
+      correctAnswer: "D) THE ONE WHO DOES THE WILL OF MY FATHER WHO IS IN HEAVEN.",
+      points: 3.5
   },
   {
       options: [
@@ -27,7 +29,9 @@ const questions = [
           "C) \"THAT WAS TRUE WITH THE OLD COVENANT [BASED UPON LAW],\" JESUS REPLIED. \"IN THE NEW COVENANT NOW UPON YOU, GRACE IS THE PATH TO ETERNAL LIFE.\"",
           "D) \"YOU HAVE ANSWERED CORRECTLY,\" JESUS REPLIED. \"DO THIS AND YOU WILL LIVE.\""
       ],
-      correctAnswer: "D) \"YOU HAVE ANSWERED CORRECTLY,\" JESUS REPLIED. \"DO THIS AND YOU WILL LIVE.\""
+      correctAnswer: "D) \"YOU HAVE ANSWERED CORRECTLY,\" JESUS REPLIED. \"DO THIS AND YOU WILL LIVE.\"",
+      points: 3
+      
   },
   {
       options: [
@@ -37,7 +41,8 @@ const questions = [
           "D) DOETH GOOD/DOETH EVIL", 
           "E) DOTH CONVERT TO CHRIST/DOTH REMAIN A JEW"
       ],
-      correctAnswer: "B) BELIEVETH AND IS BAPTIZED/BELIEVETH NOT"
+      correctAnswer: "B) BELIEVETH AND IS BAPTIZED/BELIEVETH NOT",
+      points: 3
   },
   {
       options: [
@@ -60,17 +65,19 @@ const questions = [
           "E) TO COLLECT INTEREST",
           "F) TO TAX THE RICH"
       ],
-      correctAnswer: "B) TO SEEK AND SAVE WHAT WAS LOST"
+      correctAnswer: "B) TO SEEK AND SAVE WHAT WAS LOST",
+      points: 3
   },
   {
       options: [
           "A) \"IF YOU DO NOT TREAT THE FATHER'S NAME AS HALLOWED, YOU WILL NOT GO TO HEAVEN\"", // Question 7
           "B) \"THE KINGDOM OF GOD WILL COME SHORTLY AFTER MY RETURN, FOR I WILL BE RAISED TO THE HEAVENS AFTER I DIE.\"", 
-          "C) \"FOR IS YOU FORGIVE MEN THEIR TREPASSES, YOUR HEAVENLY FATHER ALSO WILL FORGIVE YOU; BUT IF YOU DO NOT FORGIVE MEN THEIR TREPASSES, NEITHER WILL YOUR FATHER FORGIVE YOUR TREPASSES.\"", 
+          "C) \"FOR IF YOU FORGIVE MEN THEIR TREPASSES, YOUR HEAVENLY FATHER ALSO WILL FORGIVE YOU; BUT IF YOU DO NOT FORGIVE MEN THEIR TREPASSES, NEITHER WILL YOUR FATHER FORGIVE YOUR TREPASSES.\"", 
           "D) \"FOR MY FATHER WILL NEVER LEAD YOU INTO TEMPTATION THAT YOU CANNOT HANDLE.\"", 
           "E) \"AMEN\""
       ],
-      correctAnswer: "C) \"FOR IS YOU FORGIVE MEN THEIR TREPASSES, YOUR HEAVENLY FATHER ALSO WILL FORGIVE YOU; BUT IF YOU DO NOT FORGIVE MEN THEIR TREPASSES, NEITHER WILL YOUR FATHER FORGIVE YOUR TREPASSES.\""
+      correctAnswer: "C) \"FOR IF YOU FORGIVE MEN THEIR TREPASSES, YOUR HEAVENLY FATHER ALSO WILL FORGIVE YOU; BUT IF YOU DO NOT FORGIVE MEN THEIR TREPASSES, NEITHER WILL YOUR FATHER FORGIVE YOUR TREPASSES.\"",
+      points: 3
   },
   {
       options: [
@@ -81,7 +88,8 @@ const questions = [
           "E) ONE WHO PERSERVES TO THE END.",
           "F) TRUE CHRISTIAN"
       ],
-      correctAnswer:  "E) ONE WHO PERSERVES TO THE END."
+      correctAnswer:  "E) ONE WHO PERSERVES TO THE END.",
+      points: 3
   },
   {
       options: [
@@ -91,7 +99,8 @@ const questions = [
           "D) THEY DID NOT KNOW WHAT JESUS WAS TALKING ABOUT, BUT THEY INVITED HIM TO DINNER." 
 
       ],
-      correctAnswer: "C) THEY REJECTED WHAT JESUS SAID, RETURNED TO THEIR FORMER WAY OF LIFE, AND NO LONGER ACCOMPANIED HIM."
+      correctAnswer: "C) THEY REJECTED WHAT JESUS SAID, RETURNED TO THEIR FORMER WAY OF LIFE, AND NO LONGER ACCOMPANIED HIM.",
+      points: 3
   },
   {
       options: [
@@ -102,7 +111,8 @@ const questions = [
           "E) 1=BELIEVE, 2=SAVED",
           "F) 1=COMPLAIN, 2=DISLIKED"
       ],
-      correctAnswer: "A) 1=FORGIVE, 2=FORGIVEN"
+      correctAnswer: "A) 1=FORGIVE, 2=FORGIVEN",
+      points: 3
   },
   {
       options: [
@@ -113,6 +123,7 @@ const questions = [
           "E) \"IT IS BETTER FOR YOU TO LOSE ONE PART OF YOUR BODY THAN FOR YOUR WHOLE BODY TO GO INTO HELL.\"",
       ],
       correctAnswer: "E) \"IT IS BETTER FOR YOU TO LOSE ONE PART OF YOUR BODY THAN FOR YOUR WHOLE BODY TO GO INTO HELL.\"",
+      points: 3
   },
   {
       options: [
@@ -123,6 +134,7 @@ const questions = [
           "E) DENY HIMSELF, AND TAKE UP HIS CROSS.",
       ],
       correctAnswer: "E) DENY HIMSELF, AND TAKE UP HIS CROSS.",
+      points: 3
   },
   {
       options: [
@@ -134,6 +146,7 @@ const questions = [
           "F) MORE THAN YOUR IN-LAWS."
       ],
       correctAnswer: "B) AS I LOVE YOU.",
+      points: 3
   },
   {
       options: [
@@ -144,6 +157,7 @@ const questions = [
           "E) BETTER HOPE I DON'T FIND OUT ABOUT IT.",
       ],
       correctAnswer: "D) I WILL DENY BEFORE MY HEAVENLY FATHER.",
+      points: 3
   },
   {
       options: [
@@ -154,6 +168,7 @@ const questions = [
           "E) THERE IS NO SUCH THING AS HELL, SO DO NOT WORRY ABOUT IT.",
       ],
       correctAnswer: "B) IF YOU WISH TO ENTER INTO LIFE, KEEP THE COMMANDMENTS.",
+      points: 3
   },
   {
       options: [
@@ -164,6 +179,7 @@ const questions = [
           "E) \"LIFE IS A JOURNEY, NOT A DESTINATION.\"",
       ],
       correctAnswer: "A) \"ENTER BY THE NARROW GATE; FOR THE GATE IS WIDE AND THE WAY IS EASY THAT LEADS TO DESTRUCTION, AND THOSE WHO ENTER BY IT ARE MANY. FOR THE GATE IS NARROW AND THE WAY IS HARD THAT LEADS TO LIFE, AND THOSE WHO FIND IT ARE FEW.\"",
+      points: 3
   },
   {
       options: [
@@ -175,6 +191,7 @@ const questions = [
           "F) JESUS DIDN'T SAY HIS BECAUSE THERE IS NO SUCH THING AS HELL."
       ],
       correctAnswer: "A) THE SHEEP ARE THE ONES WHO GAVE FOOD, DRINK, CLOTHES, WELCOME, AND CARE TO \"THE LEAST OF [JESUS'] BROTHERS AND SISTERS,\"THE GOATS ARE THE ONES WHO DID NOT.",
+      points: 3
   },
   {
       options: [
@@ -185,6 +202,7 @@ const questions = [
           "E) HIS FRIENDS WILL SAY HE IS NO FUN/HE WILL FIT IN WITH THE WRONG CROWD.",
       ],
       correctAnswer: "C) HE SHALL SURELY LIVE/THEY SHALL DIE.",
+      points: 3
   },
   {
       options: [
@@ -196,6 +214,7 @@ const questions = [
           "F) GATHER YE AROUND: / AND DID BATHE"
       ],
       correctAnswer: "C) REPENT YE: / CONFESSING THEIR SINS",
+      points: 3
   },
   {
       options: [
@@ -207,6 +226,7 @@ const questions = [
           "F) BE THEIR FATHER IF THEY ARE SAVED"
       ],
       correctAnswer: "A) WIPE AWAY EVERY TEAR FROM THEIR EYES",
+      points: 3
   },
   {
       options: [
@@ -217,7 +237,8 @@ const questions = [
           "E) MOSQUITOS, SNAKES, SCORPIONS",
           "F) DANCING, PARTIES, SINGING"
       ],
-      correctAnswer: "D) DEATH, MOURNING, PAIN"
+      correctAnswer: "D) DEATH, MOURNING, PAIN",
+      points: 3
   },
   {
       options: [
@@ -228,7 +249,8 @@ const questions = [
           "E) 1=FAITH, 2=WORKS",
           "F) 1=A JUDGE, 2=A JURY"
       ],
-      correctAnswer: "E) 1=FAITH, 2=WORKS"
+      correctAnswer: "E) 1=FAITH, 2=WORKS",
+      points: 3
   },
   
   {
@@ -243,7 +265,8 @@ const questions = [
           "H) SCIENCE",
           "I) WISDOM"
       ],
-      correctAnswer: "D) FAITH"
+      correctAnswer: "D) FAITH",
+      points: 3
   },
   {
       options: [
@@ -254,6 +277,7 @@ const questions = [
           "E) THE CONSEQUENCES OF GLOBAL WARMING",
       ],
       correctAnswer: "D) THE THINGS WHICH GOD HATH PREPARED FOR THEM THAT LOVE HIM",
+      points: 3
   },
   {
       options: [
@@ -263,7 +287,8 @@ const questions = [
           "D) \"FOR THERE IS ONE GOD AND ONE MEDIATOR BETWEEN GOD AND MANKIND, THE MAN CHRIST JESUS, WHO GAVE HIMSELF AS A RANSOM FOR ALL PEOPLE.\"",
           "E) \"FOR THERE ARE MANY MEDIATORS, SCHOLARS OF THE LAW, WHO ONLY GET PAID IF YOU GET TO HEAVEN.\"",
       ],
-      correctAnswer:  "D) \"FOR THERE IS ONE GOD AND ONE MEDIATOR BETWEEN GOD AND MANKIND, THE MAN CHRIST JESUS, WHO GAVE HIMSELF AS A RANSOM FOR ALL PEOPLE.\""
+      correctAnswer:  "D) \"FOR THERE IS ONE GOD AND ONE MEDIATOR BETWEEN GOD AND MANKIND, THE MAN CHRIST JESUS, WHO GAVE HIMSELF AS A RANSOM FOR ALL PEOPLE.\"",
+      points: 3
   },
   {
       options: [
@@ -273,7 +298,8 @@ const questions = [
           "D) 1=WATER, 2=FERTILIZER",
           "E) 1=FIRE, 2=WATER",
       ],
-      correctAnswer: "A) 1=KINDNESS, 2=SEVERITY"
+      correctAnswer: "A) 1=KINDNESS, 2=SEVERITY",
+      points: 3
   },
   {
       options: [
@@ -283,14 +309,16 @@ const questions = [
           "D) JEWS NOR MUSLIMS NOR PAGANS NOR BELIEVERS",
           "E) RACISTS NOR HOMOPHOBES",
       ],
-      correctAnswer: "B) FORNICATORS NOR IDOLATER NOR ADULTERS NOR BOY PROSTITUTES NOR SODOMITES NOR THIEVES NOR THE GREEDY NOR DRUNKARDS NOR SLANDERERS NOR ROBBERS."
+      correctAnswer: "B) FORNICATORS NOR IDOLATER NOR ADULTERS NOR BOY PROSTITUTES NOR SODOMITES NOR THIEVES NOR THE GREEDY NOR DRUNKARDS NOR SLANDERERS NOR ROBBERS.",
+      points: 3
   },
   {
       options: [
           "A) TRUE", // Question 28
           "B) FALSE"
       ],
-      correctAnswer: "A) TRUE"
+      correctAnswer: "A) TRUE",
+      points: 3
   },
   {
       options: [
@@ -301,7 +329,8 @@ const questions = [
           "E) CROWDS OUT AND REPLACES OTHER PLANTS",
           "F) IS GOOD WITH TWO PICKLES ON CHICKEN AND BREAD"
       ],
-      correctAnswer: "C) IS THE SMALLEST OF ALL THE SEEDS, YET WHEN FULL-GROWN IT IS THE LARGEST OF PLANTS"
+      correctAnswer: "C) IS THE SMALLEST OF ALL THE SEEDS, YET WHEN FULL-GROWN IT IS THE LARGEST OF PLANTS",
+      points: 3
   },
   {
       options: [
@@ -313,7 +342,8 @@ const questions = [
           "F) CLIMATE DENIERS FROM THE NORMAL PEOPLE",
           "G) JESUS DID NOT SAY THIS, BUT CORRECTED ONE OF HIS FOLLOWERS WHO DID."
       ],
-      correctAnswer: "D) WICKED FROM THE RIGHTEOUS"
+      correctAnswer: "D) WICKED FROM THE RIGHTEOUS",
+      points: 3
   },
   {
       options: [
@@ -323,7 +353,8 @@ const questions = [
           "D) NEITHER THE PHARISEE NOR THE TAX COLLECTOR BECAUSE EACH OF THEM WAS FLAWED IN DIFFERENT WAYS.",
           "E) THE SCRIPTURE DOES NOT SAY BECAUSE JESUS WANTED THE AUDIENCE TO PONDER HIS LARGER MESSAGE WITHOUT TELLING THEM THE ANSWER.",
       ],
-      correctAnswer: "B) ONLY THE TAX COLLECTOR BECAUSE HE HUMBLED HIMSELF WHEREAS THE PHARISEE EXALTED HIMSELF."
+      correctAnswer: "B) ONLY THE TAX COLLECTOR BECAUSE HE HUMBLED HIMSELF WHEREAS THE PHARISEE EXALTED HIMSELF.",
+      points: 3
   },
   {
       options: [
@@ -334,7 +365,8 @@ const questions = [
           "E) 1=CHRISTIANS, 2=DEMONS",
           "F) 1=WHEAT, 2=CHAFF"
       ],
-      correctAnswer: "C) 1=WORLD, 2=EVILDOERS"
+      correctAnswer: "C) 1=WORLD, 2=EVILDOERS",
+      points: 3
   },
   {
       options: [
@@ -344,7 +376,8 @@ const questions = [
           "D) HE WILL REMOVE IT FROM THE FLOCK",
           "E) HE REJOICES MORE OVER IT THAN OVER THE NINETY-NINE THAT DID NOT STRAY",
       ],
-      correctAnswer: "E) HE REJOICES MORE OVER IT THAN OVER THE NINETY-NINE THAT DID NOT STRAY"
+      correctAnswer: "E) HE REJOICES MORE OVER IT THAN OVER THE NINETY-NINE THAT DID NOT STRAY",
+      points: 3
   }
   // Add more questions as needed
 ];
@@ -396,16 +429,23 @@ const answerLetters = [
   }
   const userAnswers = JSON.parse(userAnswersParam);
   
-  // Calculate Score
   function calculateScore() {
     let score = 0;
+
     questions.forEach((q, i) => {
-      if ((userAnswers[i] || '').trim().toUpperCase() === (q.correctAnswer || '').trim().toUpperCase()) {
-        score++;
-      }
+        if ((userAnswers[i] || '').trim().toUpperCase() === (q.correctAnswer || '').trim().toUpperCase()) {
+            if (i === 0 || i === 1) {
+                score += 3.5; // First 2 questions
+            } else {
+                score += 3;   // Remaining 31 questions
+            }
+        }
     });
-    return score;
-  }
+
+    return Math.round(score); // Round to whole number if you want it to show like "96" instead of "96.5"
+}
+
+
   
   // Update Server
   let scoreSubmitted = localStorage.getItem('scoreSubmitted') === 'true';
@@ -447,7 +487,7 @@ const answerLetters = [
   
     const scoreText = document.createElement('span');
     scoreText.className = 'score-text';
-    scoreText.textContent = `${score} / ${questions.length}`;
+    scoreText.textContent = `${score} / 100`;
     scoreBox.appendChild(scoreText);
     container.appendChild(scoreBox);
   

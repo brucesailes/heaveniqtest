@@ -107,13 +107,13 @@ def clear_session():
 @app.route('/set_score', methods=['POST'])
 def set_score():
     if 'score' in session:
-        return f"Score already set to: {session['score']}/33", 200
+        return f"Score already set to: {session['score']}/100", 200
 
     score = request.form.get('score', default=0, type=int)
-    score = max(0, min(score, 33))
+    score = max(0, min(score, 100))
     session['score'] = score
 
-    return f"Score set to: {score}/33", 200
+    return f"Score set to: {score}/100", 200
 
 
 @app.route('/check_answers', methods=['POST'])
@@ -138,7 +138,7 @@ def check_answers():
     session['score'] = correct_count
     session['wrong_questions'] = wrong_questions
 
-    return f"Score calculated: {correct_count}/33", 200
+    return f"Score calculated: {correct_count}/100", 200
 
 
 @app.route('/get_score', methods=['GET'])
@@ -148,7 +148,7 @@ def get_score():
         stored_score = int(stored_score)
     except (ValueError, TypeError):
         stored_score = 0
-    return f"Current score: {stored_score}/33", 200
+    return f"Current score: {stored_score}/100", 200
 
 
 @app.route('/invite', methods=['POST'])
@@ -165,7 +165,7 @@ def invite():
     message_body = f"Hello,\n\n{your_name or 'Anonymous'} has invited you to learn more!\n\n"
     if comment:
         message_body += f"Comment: {comment}\n\n"
-    message_body += "Visit: https://heaveniqtest.vercel.app/."
+    message_body += "Visit: your domain here"
 
     try:
         msg = MIMEText(message_body)
@@ -205,7 +205,7 @@ def scorepage():
     message_body = f"Hello,\n\n{your_name or 'Anonymous'} has invited you to learn more!\n\n"
     if comment:
         message_body += f"Comment: {comment}\n\n"
-    message_body += "Visit: https://heaveniqtest.vercel.app/."
+    message_body += "Visit: your domain here"
 
     try:
         msg = MIMEText(message_body)
