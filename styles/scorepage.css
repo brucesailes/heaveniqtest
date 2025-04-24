@@ -490,7 +490,7 @@ body {
   border-radius: 12px;
   max-width: 500px;
   width: 50%;
-  max-height: 80vh; /* Reduce the overall height */
+  max-height: 100vh; /* Reduce the overall height */
   overflow-y: auto; /* Let box scroll if content is long */
   display: flex;
   flex-direction: column;
@@ -532,7 +532,7 @@ body {
 }
 
 #sourcesModal .back-button {
-  width: 150px;
+  width: 100px;
   cursor: pointer;
 }
 
@@ -579,7 +579,7 @@ body {
   border-radius: 12px;
   max-width: 500px;
   width: 50%;
-  max-height: 80vh; /* Reduce the overall height */
+  max-height: 100vh; /* Reduce the overall height */
   overflow-y: auto; /* Let box scroll if content is long */
   display: flex;
   flex-direction: column;
@@ -619,7 +619,7 @@ body {
 }
 
 #aboutUsModal .back-button {
-  width: 150px;
+  width: 100px;
   cursor: pointer;
   margin: 0;
 }
@@ -657,7 +657,7 @@ body {
 /* Ensure the image inside the button has no border or spacing */
 .modal-close-btn img {
   display: block; /* Remove the space below the image */
-  width: 100%; /* Adjust the size if needed */
+  width: 50%; /* Adjust the size if needed */
   height: auto; /* Keep the image's aspect ratio */
   border: none; /* Remove border if present on the image */
 }
