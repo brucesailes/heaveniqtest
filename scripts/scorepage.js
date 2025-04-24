@@ -621,7 +621,7 @@ if (!document.getElementById('answersModal')) {
         <div class="video-container">
           <iframe 
             id="heavenVideo" 
-            src="https://www.youtube.com/embed/oLdrqwYg-38" 
+            src="link to the youtube url here" 
             frameborder="0" 
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
