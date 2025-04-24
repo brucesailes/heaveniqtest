@@ -68,7 +68,7 @@ body {
 .text-image, .question-image {
     width: 80%; /* Keep images consistent within rectangle */
     height: auto;
-    margin-bottom: 10px; /* Space between images */
+    margin-bottom: 40px; /* Space between images */
 }
 
 /* Divider Image Styling */
